@@ -1,0 +1,8 @@
+# Ignorar arquivos de log
+*.log
+
+# Ignorar diretório build
+bin/
+obj/
+# Ignorar arquivos temporários
+*.tmp

@@ -1,0 +1,4254 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "array",
+  "items": [
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "null"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "boolean"
+            },
+            "boleto": {
+              "type": "boolean"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "boolean"
+                },
+                "qteParcelas": {
+                  "type": "integer"
+                },
+                "juros": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "integer"
+        },
+        "quantidadeTotal": {
+          "type": "integer"
+        },
+        "idUsuario": {
+          "type": "null"
+        },
+        "_id": {
+          "type": "null"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "null"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "boolean"
+            },
+            "boleto": {
+              "type": "boolean"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "boolean"
+                },
+                "qteParcelas": {
+                  "type": "integer"
+                },
+                "juros": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "integer"
+        },
+        "quantidadeTotal": {
+          "type": "integer"
+        },
+        "idUsuario": {
+          "type": "null"
+        },
+        "_id": {
+          "type": "null"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "null"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "boolean"
+            },
+            "boleto": {
+              "type": "boolean"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "boolean"
+                },
+                "qteParcelas": {
+                  "type": "integer"
+                },
+                "juros": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "integer"
+        },
+        "quantidadeTotal": {
+          "type": "integer"
+        },
+        "idUsuario": {
+          "type": "null"
+        },
+        "_id": {
+          "type": "null"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "null"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "boolean"
+            },
+            "boleto": {
+              "type": "boolean"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "boolean"
+                },
+                "qteParcelas": {
+                  "type": "integer"
+                },
+                "juros": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "integer"
+        },
+        "quantidadeTotal": {
+          "type": "integer"
+        },
+        "idUsuario": {
+          "type": "null"
+        },
+        "_id": {
+          "type": "null"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "null"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "boolean"
+            },
+            "boleto": {
+              "type": "boolean"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "boolean"
+                },
+                "qteParcelas": {
+                  "type": "integer"
+                },
+                "juros": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "integer"
+        },
+        "quantidadeTotal": {
+          "type": "integer"
+        },
+        "idUsuario": {
+          "type": "null"
+        },
+        "_id": {
+          "type": "null"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "null"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "boolean"
+            },
+            "boleto": {
+              "type": "boolean"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "boolean"
+                },
+                "qteParcelas": {
+                  "type": "integer"
+                },
+                "juros": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "integer"
+        },
+        "quantidadeTotal": {
+          "type": "integer"
+        },
+        "idUsuario": {
+          "type": "null"
+        },
+        "_id": {
+          "type": "null"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "null"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "boolean"
+            },
+            "boleto": {
+              "type": "boolean"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "boolean"
+                },
+                "qteParcelas": {
+                  "type": "integer"
+                },
+                "juros": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "integer"
+        },
+        "quantidadeTotal": {
+          "type": "integer"
+        },
+        "idUsuario": {
+          "type": "null"
+        },
+        "_id": {
+          "type": "null"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "null"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "boolean"
+            },
+            "boleto": {
+              "type": "boolean"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "boolean"
+                },
+                "qteParcelas": {
+                  "type": "integer"
+                },
+                "juros": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "integer"
+        },
+        "quantidadeTotal": {
+          "type": "integer"
+        },
+        "idUsuario": {
+          "type": "null"
+        },
+        "_id": {
+          "type": "null"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "null"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "boolean"
+            },
+            "boleto": {
+              "type": "boolean"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "boolean"
+                },
+                "qteParcelas": {
+                  "type": "integer"
+                },
+                "juros": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "integer"
+        },
+        "quantidadeTotal": {
+          "type": "integer"
+        },
+        "idUsuario": {
+          "type": "null"
+        },
+        "_id": {
+          "type": "null"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "null"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "boolean"
+            },
+            "boleto": {
+              "type": "boolean"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "boolean"
+                },
+                "qteParcelas": {
+                  "type": "integer"
+                },
+                "juros": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "integer"
+        },
+        "quantidadeTotal": {
+          "type": "integer"
+        },
+        "idUsuario": {
+          "type": "null"
+        },
+        "_id": {
+          "type": "null"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "null"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "boolean"
+            },
+            "boleto": {
+              "type": "boolean"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "boolean"
+                },
+                "qteParcelas": {
+                  "type": "integer"
+                },
+                "juros": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "integer"
+        },
+        "quantidadeTotal": {
+          "type": "integer"
+        },
+        "idUsuario": {
+          "type": "null"
+        },
+        "_id": {
+          "type": "null"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "null"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "boolean"
+            },
+            "boleto": {
+              "type": "boolean"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "boolean"
+                },
+                "qteParcelas": {
+                  "type": "integer"
+                },
+                "juros": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "integer"
+        },
+        "quantidadeTotal": {
+          "type": "integer"
+        },
+        "idUsuario": {
+          "type": "null"
+        },
+        "_id": {
+          "type": "null"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "null"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "boolean"
+            },
+            "boleto": {
+              "type": "boolean"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "boolean"
+                },
+                "qteParcelas": {
+                  "type": "integer"
+                },
+                "juros": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "integer"
+        },
+        "quantidadeTotal": {
+          "type": "integer"
+        },
+        "idUsuario": {
+          "type": "null"
+        },
+        "_id": {
+          "type": "null"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "null"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "boolean"
+            },
+            "boleto": {
+              "type": "boolean"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "boolean"
+                },
+                "qteParcelas": {
+                  "type": "integer"
+                },
+                "juros": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "integer"
+        },
+        "quantidadeTotal": {
+          "type": "integer"
+        },
+        "idUsuario": {
+          "type": "null"
+        },
+        "_id": {
+          "type": "null"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "null"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "boolean"
+            },
+            "boleto": {
+              "type": "boolean"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "boolean"
+                },
+                "qteParcelas": {
+                  "type": "integer"
+                },
+                "juros": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "integer"
+        },
+        "quantidadeTotal": {
+          "type": "integer"
+        },
+        "idUsuario": {
+          "type": "null"
+        },
+        "_id": {
+          "type": "null"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "null"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "boolean"
+            },
+            "boleto": {
+              "type": "boolean"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "boolean"
+                },
+                "qteParcelas": {
+                  "type": "integer"
+                },
+                "juros": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "integer"
+        },
+        "quantidadeTotal": {
+          "type": "integer"
+        },
+        "idUsuario": {
+          "type": "null"
+        },
+        "_id": {
+          "type": "null"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "null"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "boolean"
+            },
+            "boleto": {
+              "type": "boolean"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "boolean"
+                },
+                "qteParcelas": {
+                  "type": "integer"
+                },
+                "juros": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "integer"
+        },
+        "quantidadeTotal": {
+          "type": "integer"
+        },
+        "idUsuario": {
+          "type": "null"
+        },
+        "_id": {
+          "type": "null"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "null"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "boolean"
+            },
+            "boleto": {
+              "type": "boolean"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "boolean"
+                },
+                "qteParcelas": {
+                  "type": "integer"
+                },
+                "juros": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "integer"
+        },
+        "quantidadeTotal": {
+          "type": "integer"
+        },
+        "idUsuario": {
+          "type": "null"
+        },
+        "_id": {
+          "type": "null"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "null"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "boolean"
+            },
+            "boleto": {
+              "type": "boolean"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "boolean"
+                },
+                "qteParcelas": {
+                  "type": "integer"
+                },
+                "juros": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "integer"
+        },
+        "quantidadeTotal": {
+          "type": "integer"
+        },
+        "idUsuario": {
+          "type": "null"
+        },
+        "_id": {
+          "type": "null"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "null"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "boolean"
+            },
+            "boleto": {
+              "type": "boolean"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "boolean"
+                },
+                "qteParcelas": {
+                  "type": "integer"
+                },
+                "juros": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "integer"
+        },
+        "quantidadeTotal": {
+          "type": "integer"
+        },
+        "idUsuario": {
+          "type": "null"
+        },
+        "_id": {
+          "type": "null"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "null"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "boolean"
+            },
+            "boleto": {
+              "type": "boolean"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "boolean"
+                },
+                "qteParcelas": {
+                  "type": "integer"
+                },
+                "juros": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "integer"
+        },
+        "quantidadeTotal": {
+          "type": "integer"
+        },
+        "idUsuario": {
+          "type": "null"
+        },
+        "_id": {
+          "type": "null"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "null"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "boolean"
+            },
+            "boleto": {
+              "type": "boolean"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "boolean"
+                },
+                "qteParcelas": {
+                  "type": "integer"
+                },
+                "juros": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "integer"
+        },
+        "quantidadeTotal": {
+          "type": "integer"
+        },
+        "idUsuario": {
+          "type": "null"
+        },
+        "_id": {
+          "type": "null"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "null"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "boolean"
+            },
+            "boleto": {
+              "type": "boolean"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "boolean"
+                },
+                "qteParcelas": {
+                  "type": "integer"
+                },
+                "juros": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "integer"
+        },
+        "quantidadeTotal": {
+          "type": "integer"
+        },
+        "idUsuario": {
+          "type": "null"
+        },
+        "_id": {
+          "type": "null"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "null"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "boolean"
+            },
+            "boleto": {
+              "type": "boolean"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "boolean"
+                },
+                "qteParcelas": {
+                  "type": "integer"
+                },
+                "juros": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "integer"
+        },
+        "quantidadeTotal": {
+          "type": "integer"
+        },
+        "idUsuario": {
+          "type": "null"
+        },
+        "_id": {
+          "type": "null"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "null"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "boolean"
+            },
+            "boleto": {
+              "type": "boolean"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "boolean"
+                },
+                "qteParcelas": {
+                  "type": "integer"
+                },
+                "juros": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "integer"
+        },
+        "quantidadeTotal": {
+          "type": "integer"
+        },
+        "idUsuario": {
+          "type": "null"
+        },
+        "_id": {
+          "type": "null"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "null"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "boolean"
+            },
+            "boleto": {
+              "type": "boolean"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "boolean"
+                },
+                "qteParcelas": {
+                  "type": "integer"
+                },
+                "juros": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "integer"
+        },
+        "quantidadeTotal": {
+          "type": "integer"
+        },
+        "idUsuario": {
+          "type": "null"
+        },
+        "_id": {
+          "type": "null"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "null"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "boolean"
+            },
+            "boleto": {
+              "type": "boolean"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "boolean"
+                },
+                "qteParcelas": {
+                  "type": "integer"
+                },
+                "juros": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "integer"
+        },
+        "quantidadeTotal": {
+          "type": "integer"
+        },
+        "idUsuario": {
+          "type": "null"
+        },
+        "_id": {
+          "type": "null"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "null"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "boolean"
+            },
+            "boleto": {
+              "type": "boolean"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "boolean"
+                },
+                "qteParcelas": {
+                  "type": "integer"
+                },
+                "juros": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "integer"
+        },
+        "quantidadeTotal": {
+          "type": "integer"
+        },
+        "idUsuario": {
+          "type": "null"
+        },
+        "_id": {
+          "type": "null"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "null"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "boolean"
+            },
+            "boleto": {
+              "type": "boolean"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "boolean"
+                },
+                "qteParcelas": {
+                  "type": "integer"
+                },
+                "juros": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "integer"
+        },
+        "quantidadeTotal": {
+          "type": "integer"
+        },
+        "idUsuario": {
+          "type": "null"
+        },
+        "_id": {
+          "type": "null"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "null"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "boolean"
+            },
+            "boleto": {
+              "type": "boolean"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "boolean"
+                },
+                "qteParcelas": {
+                  "type": "integer"
+                },
+                "juros": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "integer"
+        },
+        "quantidadeTotal": {
+          "type": "integer"
+        },
+        "idUsuario": {
+          "type": "null"
+        },
+        "_id": {
+          "type": "null"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "null"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "boolean"
+            },
+            "boleto": {
+              "type": "boolean"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "boolean"
+                },
+                "qteParcelas": {
+                  "type": "integer"
+                },
+                "juros": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "integer"
+        },
+        "quantidadeTotal": {
+          "type": "integer"
+        },
+        "idUsuario": {
+          "type": "null"
+        },
+        "_id": {
+          "type": "null"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "null"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "boolean"
+            },
+            "boleto": {
+              "type": "boolean"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "boolean"
+                },
+                "qteParcelas": {
+                  "type": "integer"
+                },
+                "juros": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "integer"
+        },
+        "quantidadeTotal": {
+          "type": "integer"
+        },
+        "idUsuario": {
+          "type": "null"
+        },
+        "_id": {
+          "type": "null"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "null"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "boolean"
+            },
+            "boleto": {
+              "type": "boolean"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "boolean"
+                },
+                "qteParcelas": {
+                  "type": "integer"
+                },
+                "juros": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "integer"
+        },
+        "quantidadeTotal": {
+          "type": "integer"
+        },
+        "idUsuario": {
+          "type": "null"
+        },
+        "_id": {
+          "type": "null"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "null"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "boolean"
+            },
+            "boleto": {
+              "type": "boolean"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "boolean"
+                },
+                "qteParcelas": {
+                  "type": "integer"
+                },
+                "juros": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "integer"
+        },
+        "quantidadeTotal": {
+          "type": "integer"
+        },
+        "idUsuario": {
+          "type": "null"
+        },
+        "_id": {
+          "type": "null"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "null"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "boolean"
+            },
+            "boleto": {
+              "type": "boolean"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "boolean"
+                },
+                "qteParcelas": {
+                  "type": "integer"
+                },
+                "juros": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "integer"
+        },
+        "quantidadeTotal": {
+          "type": "integer"
+        },
+        "idUsuario": {
+          "type": "null"
+        },
+        "_id": {
+          "type": "null"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "null"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "boolean"
+            },
+            "boleto": {
+              "type": "boolean"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "boolean"
+                },
+                "qteParcelas": {
+                  "type": "integer"
+                },
+                "juros": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "integer"
+        },
+        "quantidadeTotal": {
+          "type": "integer"
+        },
+        "idUsuario": {
+          "type": "null"
+        },
+        "_id": {
+          "type": "null"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "null"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "boolean"
+            },
+            "boleto": {
+              "type": "boolean"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "boolean"
+                },
+                "qteParcelas": {
+                  "type": "integer"
+                },
+                "juros": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "integer"
+        },
+        "quantidadeTotal": {
+          "type": "integer"
+        },
+        "idUsuario": {
+          "type": "null"
+        },
+        "_id": {
+          "type": "null"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "null"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "boolean"
+            },
+            "boleto": {
+              "type": "boolean"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "boolean"
+                },
+                "qteParcelas": {
+                  "type": "integer"
+                },
+                "juros": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "integer"
+        },
+        "quantidadeTotal": {
+          "type": "integer"
+        },
+        "idUsuario": {
+          "type": "null"
+        },
+        "_id": {
+          "type": "null"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "null"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "boolean"
+            },
+            "boleto": {
+              "type": "boolean"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "boolean"
+                },
+                "qteParcelas": {
+                  "type": "integer"
+                },
+                "juros": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "integer"
+        },
+        "quantidadeTotal": {
+          "type": "integer"
+        },
+        "idUsuario": {
+          "type": "null"
+        },
+        "_id": {
+          "type": "null"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "null"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "boolean"
+            },
+            "boleto": {
+              "type": "boolean"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "boolean"
+                },
+                "qteParcelas": {
+                  "type": "integer"
+                },
+                "juros": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "integer"
+        },
+        "quantidadeTotal": {
+          "type": "integer"
+        },
+        "idUsuario": {
+          "type": "null"
+        },
+        "_id": {
+          "type": "null"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "null"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "boolean"
+            },
+            "boleto": {
+              "type": "boolean"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "boolean"
+                },
+                "qteParcelas": {
+                  "type": "integer"
+                },
+                "juros": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "integer"
+        },
+        "quantidadeTotal": {
+          "type": "integer"
+        },
+        "idUsuario": {
+          "type": "null"
+        },
+        "_id": {
+          "type": "null"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "null"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "boolean"
+            },
+            "boleto": {
+              "type": "boolean"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "boolean"
+                },
+                "qteParcelas": {
+                  "type": "integer"
+                },
+                "juros": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "integer"
+        },
+        "quantidadeTotal": {
+          "type": "integer"
+        },
+        "idUsuario": {
+          "type": "null"
+        },
+        "_id": {
+          "type": "null"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "null"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "boolean"
+            },
+            "boleto": {
+              "type": "boolean"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "boolean"
+                },
+                "qteParcelas": {
+                  "type": "integer"
+                },
+                "juros": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "integer"
+        },
+        "quantidadeTotal": {
+          "type": "integer"
+        },
+        "idUsuario": {
+          "type": "null"
+        },
+        "_id": {
+          "type": "null"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "null"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "boolean"
+            },
+            "boleto": {
+              "type": "boolean"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "boolean"
+                },
+                "qteParcelas": {
+                  "type": "integer"
+                },
+                "juros": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "integer"
+        },
+        "quantidadeTotal": {
+          "type": "integer"
+        },
+        "idUsuario": {
+          "type": "null"
+        },
+        "_id": {
+          "type": "null"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "null"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "boolean"
+            },
+            "boleto": {
+              "type": "boolean"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "boolean"
+                },
+                "qteParcelas": {
+                  "type": "integer"
+                },
+                "juros": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "integer"
+        },
+        "quantidadeTotal": {
+          "type": "integer"
+        },
+        "idUsuario": {
+          "type": "null"
+        },
+        "_id": {
+          "type": "null"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "null"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "boolean"
+            },
+            "boleto": {
+              "type": "boolean"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "boolean"
+                },
+                "qteParcelas": {
+                  "type": "integer"
+                },
+                "juros": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "integer"
+        },
+        "quantidadeTotal": {
+          "type": "integer"
+        },
+        "idUsuario": {
+          "type": "null"
+        },
+        "_id": {
+          "type": "null"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "null"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "boolean"
+            },
+            "boleto": {
+              "type": "boolean"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "boolean"
+                },
+                "qteParcelas": {
+                  "type": "integer"
+                },
+                "juros": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "integer"
+        },
+        "quantidadeTotal": {
+          "type": "integer"
+        },
+        "idUsuario": {
+          "type": "null"
+        },
+        "_id": {
+          "type": "null"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "null"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "boolean"
+            },
+            "boleto": {
+              "type": "boolean"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "boolean"
+                },
+                "qteParcelas": {
+                  "type": "integer"
+                },
+                "juros": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "integer"
+        },
+        "quantidadeTotal": {
+          "type": "integer"
+        },
+        "idUsuario": {
+          "type": "null"
+        },
+        "_id": {
+          "type": "null"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "null"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "boolean"
+            },
+            "boleto": {
+              "type": "boolean"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "boolean"
+                },
+                "qteParcelas": {
+                  "type": "integer"
+                },
+                "juros": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "integer"
+        },
+        "quantidadeTotal": {
+          "type": "integer"
+        },
+        "idUsuario": {
+          "type": "null"
+        },
+        "_id": {
+          "type": "null"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "null"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "boolean"
+            },
+            "boleto": {
+              "type": "boolean"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "boolean"
+                },
+                "qteParcelas": {
+                  "type": "integer"
+                },
+                "juros": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "integer"
+        },
+        "quantidadeTotal": {
+          "type": "integer"
+        },
+        "idUsuario": {
+          "type": "null"
+        },
+        "_id": {
+          "type": "null"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "null"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "boolean"
+            },
+            "boleto": {
+              "type": "boolean"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "boolean"
+                },
+                "qteParcelas": {
+                  "type": "integer"
+                },
+                "juros": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "integer"
+        },
+        "quantidadeTotal": {
+          "type": "integer"
+        },
+        "idUsuario": {
+          "type": "null"
+        },
+        "_id": {
+          "type": "null"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "null"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "boolean"
+            },
+            "boleto": {
+              "type": "boolean"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "boolean"
+                },
+                "qteParcelas": {
+                  "type": "integer"
+                },
+                "juros": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "integer"
+        },
+        "quantidadeTotal": {
+          "type": "integer"
+        },
+        "idUsuario": {
+          "type": "null"
+        },
+        "_id": {
+          "type": "null"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "null"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "boolean"
+            },
+            "boleto": {
+              "type": "boolean"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "boolean"
+                },
+                "qteParcelas": {
+                  "type": "integer"
+                },
+                "juros": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "integer"
+        },
+        "quantidadeTotal": {
+          "type": "integer"
+        },
+        "idUsuario": {
+          "type": "null"
+        },
+        "_id": {
+          "type": "null"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "null"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "boolean"
+            },
+            "boleto": {
+              "type": "boolean"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "boolean"
+                },
+                "qteParcelas": {
+                  "type": "integer"
+                },
+                "juros": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "integer"
+        },
+        "quantidadeTotal": {
+          "type": "integer"
+        },
+        "idUsuario": {
+          "type": "null"
+        },
+        "_id": {
+          "type": "null"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "null"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "boolean"
+            },
+            "boleto": {
+              "type": "boolean"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "boolean"
+                },
+                "qteParcelas": {
+                  "type": "integer"
+                },
+                "juros": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "integer"
+        },
+        "quantidadeTotal": {
+          "type": "integer"
+        },
+        "idUsuario": {
+          "type": "null"
+        },
+        "_id": {
+          "type": "null"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "null"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "boolean"
+            },
+            "boleto": {
+              "type": "boolean"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "boolean"
+                },
+                "qteParcelas": {
+                  "type": "integer"
+                },
+                "juros": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "integer"
+        },
+        "quantidadeTotal": {
+          "type": "integer"
+        },
+        "idUsuario": {
+          "type": "null"
+        },
+        "_id": {
+          "type": "null"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "null"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "boolean"
+            },
+            "boleto": {
+              "type": "boolean"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "boolean"
+                },
+                "qteParcelas": {
+                  "type": "integer"
+                },
+                "juros": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "integer"
+        },
+        "quantidadeTotal": {
+          "type": "integer"
+        },
+        "idUsuario": {
+          "type": "null"
+        },
+        "_id": {
+          "type": "null"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "string"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "string"
+            },
+            "boleto": {
+              "type": "string"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "string"
+                },
+                "qteParcelas": {
+                  "type": "string"
+                },
+                "juros": {
+                  "type": "string"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "string"
+        },
+        "quantidadeTotal": {
+          "type": "string"
+        },
+        "idUsuario": {
+          "type": "string"
+        },
+        "_id": {
+          "type": "string"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "string"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "string"
+            },
+            "boleto": {
+              "type": "string"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "string"
+                },
+                "qteParcelas": {
+                  "type": "string"
+                },
+                "juros": {
+                  "type": "string"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "string"
+        },
+        "quantidadeTotal": {
+          "type": "string"
+        },
+        "idUsuario": {
+          "type": "string"
+        },
+        "_id": {
+          "type": "string"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "string"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "string"
+            },
+            "boleto": {
+              "type": "string"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "string"
+                },
+                "qteParcelas": {
+                  "type": "string"
+                },
+                "juros": {
+                  "type": "string"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "string"
+        },
+        "quantidadeTotal": {
+          "type": "string"
+        },
+        "idUsuario": {
+          "type": "string"
+        },
+        "_id": {
+          "type": "string"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "string"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "string"
+            },
+            "boleto": {
+              "type": "string"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "string"
+                },
+                "qteParcelas": {
+                  "type": "string"
+                },
+                "juros": {
+                  "type": "string"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "string"
+        },
+        "quantidadeTotal": {
+          "type": "string"
+        },
+        "idUsuario": {
+          "type": "string"
+        },
+        "_id": {
+          "type": "string"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "string"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "string"
+            },
+            "boleto": {
+              "type": "string"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "string"
+                },
+                "qteParcelas": {
+                  "type": "string"
+                },
+                "juros": {
+                  "type": "string"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "string"
+        },
+        "quantidadeTotal": {
+          "type": "string"
+        },
+        "idUsuario": {
+          "type": "string"
+        },
+        "_id": {
+          "type": "string"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "string"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "string"
+            },
+            "boleto": {
+              "type": "string"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "string"
+                },
+                "qteParcelas": {
+                  "type": "string"
+                },
+                "juros": {
+                  "type": "string"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "string"
+        },
+        "quantidadeTotal": {
+          "type": "string"
+        },
+        "idUsuario": {
+          "type": "string"
+        },
+        "_id": {
+          "type": "string"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "string"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "string"
+            },
+            "boleto": {
+              "type": "string"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "string"
+                },
+                "qteParcelas": {
+                  "type": "string"
+                },
+                "juros": {
+                  "type": "string"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "string"
+        },
+        "quantidadeTotal": {
+          "type": "string"
+        },
+        "idUsuario": {
+          "type": "string"
+        },
+        "_id": {
+          "type": "string"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "string"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "string"
+            },
+            "boleto": {
+              "type": "string"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "string"
+                },
+                "qteParcelas": {
+                  "type": "string"
+                },
+                "juros": {
+                  "type": "string"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "string"
+        },
+        "quantidadeTotal": {
+          "type": "string"
+        },
+        "idUsuario": {
+          "type": "string"
+        },
+        "_id": {
+          "type": "string"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "string"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "string"
+            },
+            "boleto": {
+              "type": "string"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "string"
+                },
+                "qteParcelas": {
+                  "type": "string"
+                },
+                "juros": {
+                  "type": "string"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "string"
+        },
+        "quantidadeTotal": {
+          "type": "string"
+        },
+        "idUsuario": {
+          "type": "string"
+        },
+        "_id": {
+          "type": "string"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "string"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "string"
+            },
+            "boleto": {
+              "type": "string"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "string"
+                },
+                "qteParcelas": {
+                  "type": "string"
+                },
+                "juros": {
+                  "type": "string"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "string"
+        },
+        "quantidadeTotal": {
+          "type": "string"
+        },
+        "idUsuario": {
+          "type": "string"
+        },
+        "_id": {
+          "type": "string"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "string"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "string"
+            },
+            "boleto": {
+              "type": "string"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "string"
+                },
+                "qteParcelas": {
+                  "type": "string"
+                },
+                "juros": {
+                  "type": "string"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "string"
+        },
+        "quantidadeTotal": {
+          "type": "string"
+        },
+        "idUsuario": {
+          "type": "string"
+        },
+        "_id": {
+          "type": "string"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "string"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "string"
+            },
+            "boleto": {
+              "type": "string"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "string"
+                },
+                "qteParcelas": {
+                  "type": "string"
+                },
+                "juros": {
+                  "type": "string"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "string"
+        },
+        "quantidadeTotal": {
+          "type": "string"
+        },
+        "idUsuario": {
+          "type": "string"
+        },
+        "_id": {
+          "type": "string"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "string"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "string"
+            },
+            "boleto": {
+              "type": "string"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "string"
+                },
+                "qteParcelas": {
+                  "type": "string"
+                },
+                "juros": {
+                  "type": "string"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "string"
+        },
+        "quantidadeTotal": {
+          "type": "string"
+        },
+        "idUsuario": {
+          "type": "string"
+        },
+        "_id": {
+          "type": "string"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "string"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "string"
+            },
+            "boleto": {
+              "type": "string"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "string"
+                },
+                "qteParcelas": {
+                  "type": "string"
+                },
+                "juros": {
+                  "type": "string"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "string"
+        },
+        "quantidadeTotal": {
+          "type": "string"
+        },
+        "idUsuario": {
+          "type": "string"
+        },
+        "_id": {
+          "type": "string"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "dataPagamento": {
+          "type": "string"
+        },
+        "formaPagamento": {
+          "type": "object",
+          "properties": {
+            "pix": {
+              "type": "string"
+            },
+            "boleto": {
+              "type": "string"
+            },
+            "credito": {
+              "type": "object",
+              "properties": {
+                "credito_status": {
+                  "type": "string"
+                },
+                "qteParcelas": {
+                  "type": "string"
+                },
+                "juros": {
+                  "type": "string"
+                }
+              },
+              "required": ["credito_status", "qteParcelas", "juros"]
+            }
+          },
+          "required": ["pix", "boleto", "credito"]
+        },
+        "precoTotal": {
+          "type": "string"
+        },
+        "quantidadeTotal": {
+          "type": "string"
+        },
+        "idUsuario": {
+          "type": "string"
+        },
+        "_id": {
+          "type": "string"
+        },
+        "idPagamento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataPagamento",
+        "formaPagamento",
+        "precoTotal",
+        "quantidadeTotal",
+        "idUsuario",
+        "_id",
+        "idPagamento"
+      ]
+    }
+  ]
+}
