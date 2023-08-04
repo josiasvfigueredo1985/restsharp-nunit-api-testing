@@ -1,14 +1,8 @@
 ﻿using NUnit.Framework;
 using DesafioAutomacaoAPIBase2.Bases;
-using DesafioAutomacaoAPIBase2.Helpers;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using DesafioAutomacaoAPIBase2.Requests.Login;
 using DesafioAutomacaoAPIBase2.Steps;
-using System.IO;
-using System.Net;
-using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using RestSharp;
 using DesafioAutomacaoAPIBase2.Requests.Usuarios;
@@ -16,6 +10,8 @@ using DesafioAutomacaoAPIBase2.Requests.Usuarios;
 namespace DesafioAutomacaoAPIBase2.Tests
 {
     [TestFixture]
+    [Parallelizable(ParallelScope.All)]// Parallelizable tests
+    // Check the configs in the file ** DesafioAutomacaoRestSharp\obj\Debug\netcoreapp7.0\DesafioAutomacaoRestSharp.AssemblyInfo.cs"
     class LoginTests : TestBase
     {
         #region Testes Positivos
@@ -25,7 +21,7 @@ namespace DesafioAutomacaoAPIBase2.Tests
             string mensagem = "Login realizado com sucesso";
 
             //Deletar o usuário
-            UsuarioStep.DeletarUsuariosCriados();
+            //  UsuarioStep.DeletarUsuariosCriados();
 
             // Criar novo usuário 
             dynamic jsonData1 = JsonConvert.DeserializeObject(UsuarioStep.CriarUsuario().Content.ToString());
@@ -50,11 +46,11 @@ namespace DesafioAutomacaoAPIBase2.Tests
             dynamic jsonData = JsonConvert.DeserializeObject(response.Content.ToString());
 
             //Deletar o usuário
-            UsuarioStep.DeletarUsuariosCriados();
+            //  UsuarioStep.DeletarUsuariosCriados();
 
             Assert.IsTrue((int)response.StatusCode == 200);
             Assert.True(response.IsSuccessful);
-            Assert.AreEqual(mensagem,jsonData.message.Value);
+            Assert.AreEqual(mensagem, jsonData.message.Value);
             Assert.IsTrue(response.Content.Contains("authorization"));
         }
         #endregion
@@ -66,7 +62,7 @@ namespace DesafioAutomacaoAPIBase2.Tests
             string mensagem = "email deve ser um email válido";
 
             //Deletar o usuário
-            UsuarioStep.DeletarUsuariosCriados();
+            // UsuarioStep.DeletarUsuariosCriados();
 
             // Criar novo usuário 
             dynamic jsonData1 = JsonConvert.DeserializeObject(UsuarioStep.CriarUsuario().Content.ToString());
@@ -90,7 +86,7 @@ namespace DesafioAutomacaoAPIBase2.Tests
             Console.WriteLine(response.Content.ToString());
 
             //Deletar o usuário
-            UsuarioStep.DeletarUsuariosCriados();
+            // UsuarioStep.DeletarUsuariosCriados();
 
             Assert.IsTrue((int)response.StatusCode == 400);
             Assert.AreEqual(mensagem, jsonData.email.Value);
@@ -102,7 +98,7 @@ namespace DesafioAutomacaoAPIBase2.Tests
             string mensagem = "Email e/ou senha inválidos";
 
             //Deletar o usuário
-            UsuarioStep.DeletarUsuariosCriados();
+            //UsuarioStep.DeletarUsuariosCriados();
 
             // Criar novo usuário 
             dynamic jsonData1 = JsonConvert.DeserializeObject(UsuarioStep.CriarUsuario().Content.ToString());
@@ -126,7 +122,7 @@ namespace DesafioAutomacaoAPIBase2.Tests
             Console.WriteLine(response.Content.ToString());
 
             //Deletar o usuário
-            UsuarioStep.DeletarUsuariosCriados();
+            //UsuarioStep.DeletarUsuariosCriados();
 
             Assert.IsTrue((int)response.StatusCode == 401);
             Assert.AreEqual(mensagem, jsonData.message.Value);

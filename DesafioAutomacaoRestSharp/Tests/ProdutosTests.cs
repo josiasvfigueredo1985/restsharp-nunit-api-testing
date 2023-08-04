@@ -30,7 +30,7 @@ namespace DesafioAutomacaoAPIBase2.Tests
             dynamic jsonData = JsonConvert.DeserializeObject(response.Content);
 
             // Inserção do ID gerado em cada response na tabela "produto" no banco de dados
-            SolicitacaoDBSteps.InserirProdutoCriadoDB(jsonData._id.Value);
+           // SolicitacaoDBSteps.InserirProdutoCriadoDB(jsonData._id.Value);
 
             Assert.IsTrue(response.IsSuccessful);
             Assert.AreEqual("Created", response.StatusCode.ToString());

@@ -80,7 +80,7 @@ namespace DesafioAutomacaoAPIBase2.Steps
 
             Console.WriteLine("Response Delete: " + cont);
 
-            if (response.Content != "[]")
+            if (response.IsSuccessful & response.ContentLength > 2)
             {
                 dynamic jsonData = JsonConvert.DeserializeObject<dynamic>(cont);
 

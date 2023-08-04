@@ -9,7 +9,7 @@ namespace DesafioAutomacaoAPIBase2.Requests.Pagamento
         public GetAllPagamento()
         {
             url = JsonBuilder.ReturnParameterAppSettings("URL_MOCK");
-            requestService = "pagamento/tipoPagamento";
+            requestService = "/pagamento/tipoPagamento";
             method = Method.GET;
             parameterTypeIsUrlSegment = false;
         }

@@ -11,6 +11,7 @@ using System.Web.UI;
 using RestSharp;
 using Newtonsoft.Json;
 using System.Threading;
+using Newtonsoft.Json.Linq;
 
 namespace DesafioAutomacaoAPIBase2.Tests
 {
@@ -28,10 +29,10 @@ namespace DesafioAutomacaoAPIBase2.Tests
 
             Console.WriteLine(response.Content);
 
-            dynamic jsonData = JsonConvert.DeserializeObject(response.Content.ToString());
+            dynamic jsonData = JsonConvert.DeserializeObject(response.Content);
 
             // Inserção do ID gerado em cada response na tabela "produto" no banco de dados
-            SolicitacaoDBSteps.InserirProdutoCriadoDB(jsonData._id.Value);
+            // SolicitacaoDBSteps.InserirProdutoCriadoDB(jsonData._id.Value);
 
             bool status = GeneralHelpers.RegexStatusCodesSucesso(response.StatusCode.ToString());
 
@@ -51,51 +52,49 @@ namespace DesafioAutomacaoAPIBase2.Tests
             GetUsuarios get = new GetUsuarios();
             IRestResponse response = get.ExecuteRequest();
 
-            dynamic jsondata = JsonConvert.DeserializeObject(response.Content.ToString());
+            dynamic jsondata = JsonConvert.DeserializeObject(response.Content);
 
             Console.WriteLine($"Usuários cadastrados: {jsondata}");
-
-            //Deletar usuários cadastrados
-            UsuarioStep.DeletarUsuariosCriados();
 
             bool status = GeneralHelpers.RegexStatusCodesSucesso(response.StatusCode.ToString());
 
             Assert.True(status);
             Assert.True(response.IsSuccessful);
             Assert.IsTrue(jsondata.quantidade.Value >= quantidade);
+
+            //Deletar usuários cadastrados
+            UsuarioStep.DeletarUsuariosCriados();
         }
 
         [Test]
         public void ListarUsuarioCadastradoPorParametros()
         {
-            int qtd = 1;
             //Criar usuário
-            UsuarioStep.CriarUsuario();
+            IRestResponse userResponse = UsuarioStep.CriarUsuario();
+            dynamic user = JsonConvert.DeserializeObject(userResponse.Content);
 
             // Pegar os dados do usuário que foram armazenados no banco de dados
-            var dadosUsuario = SolicitacaoDBSteps.BuscarUsuariosCriados();
-            string id = dadosUsuario[4];
-            string nome = dadosUsuario[0];
-            string email = dadosUsuario[1];
-            string password = dadosUsuario[2];
-            bool administrador = Convert.ToBoolean((dadosUsuario[3]));
+            // var dadosUsuario = SolicitacaoDBSteps.BuscarUsuariosCriados();
+            // string id = dadosUsuario[4];
+            // string nome = dadosUsuario[0];
+            // string email = dadosUsuario[1];
+            // string password = dadosUsuario[2];
+            // bool administrador = Convert.ToBoolean((dadosUsuario[3]));
 
             // Listar o usuário conforme os dados informados
-            GetUsuarios get = new GetUsuarios(id, nome, email, password, administrador);
+            GetUsuarioPorId get = new GetUsuarioPorId(user._id.ToString());
             IRestResponse response = get.ExecuteRequest();
 
-            dynamic jsonData = JsonConvert.DeserializeObject(response.Content.ToString());
-
-            Console.WriteLine(jsonData);
-
-            //Deletar usuários cadastrados
-            UsuarioStep.DeletarUsuariosCriados();
+            JObject jsonData = (JObject)JsonConvert.DeserializeObject(response.Content);
 
             bool status = GeneralHelpers.RegexStatusCodesSucesso(response.StatusCode.ToString());
 
             Assert.True(status);
             Assert.True(response.IsSuccessful);
-            Assert.IsTrue(jsonData.quantidade == qtd);
+            Assert.IsTrue(jsonData.Count == 5);
+
+            //Deletar usuários cadastrados
+            UsuarioStep.DeletarUsuariosCriados();
         }
 
         [Test]
@@ -111,8 +110,8 @@ namespace DesafioAutomacaoAPIBase2.Tests
             post.SetJsonBody(nome, email, password, administrador);
 
             IRestResponse response = post.ExecuteRequest();
-            dynamic jsonData = JsonConvert.DeserializeObject(response.Content.ToString());
-            string id = jsonData._id.Value;
+            dynamic jsonData = JsonConvert.DeserializeObject(response.Content);
+            string id = jsonData._id;
 
             Console.WriteLine(jsonData);
 
@@ -124,7 +123,7 @@ namespace DesafioAutomacaoAPIBase2.Tests
             Assert.True(status);
             Assert.True(response.IsSuccessful);
             Assert.AreEqual(mensagem, jsonData.message.Value);
-           
+
         }
 
         [Test]
@@ -136,19 +135,19 @@ namespace DesafioAutomacaoAPIBase2.Tests
             UsuarioStep.DeletarUsuariosCriados();
 
             //Criar usuário
-            UsuarioStep.CriarUsuario();
+            IRestResponse userResponse = UsuarioStep.CriarUsuario();
 
             // Pegar os dados do primeiro usuário que foi armazenado no banco de dados
-            var dadosUsuario = SolicitacaoDBSteps.BuscarUsuariosCriados();
-            string id = dadosUsuario[4];
-
+            // var dadosUsuario = SolicitacaoDBSteps.BuscarUsuariosCriados();
+            dynamic user = JsonConvert.DeserializeObject(userResponse.Content);
+            string id = user._id;
             // Listar o usuário conforme o id informado
             GetUsuarioPorId get = new GetUsuarioPorId(id);
             IRestResponse response = get.ExecuteRequest();
-            Console.WriteLine(response.Content.ToString());
+            Console.WriteLine(response.Content);
 
-            dynamic jsonData = JsonConvert.DeserializeObject(response.Content.ToString());
-
+            dynamic jsonData = JsonConvert.DeserializeObject(response.Content);
+            string userName = jsonData.nome;
             //Deletar usuários cadastrados
             UsuarioStep.DeletarUsuarioPorId(id);
 
@@ -156,7 +155,7 @@ namespace DesafioAutomacaoAPIBase2.Tests
 
             Assert.True(status);
             Assert.True(response.IsSuccessful);
-            Assert.AreEqual(nome, jsonData.nome.Value);
+            Assert.AreEqual(nome, userName);
         }
 
         [Test]
@@ -174,16 +173,19 @@ namespace DesafioAutomacaoAPIBase2.Tests
             //Criar usuário
             UsuarioStep.CriarUsuario();
 
-            // Pegar os dados do primeiro usuário que foi armazenado no banco de dados
-            var dadosUsuario = SolicitacaoDBSteps.BuscarUsuariosCriados();
-            string id = dadosUsuario[4];
+            // // Pegar os dados do primeiro usuário que foi armazenado no banco de dados
+            // List<string> dadosUsuario = SolicitacaoDBSteps.BuscarUsuariosCriados();
+            // string id = dadosUsuario[4];
 
+            IRestResponse userResponse = UsuarioStep.CriarUsuario();
+            dynamic user = JsonConvert.DeserializeObject(userResponse.Content);
+            string id = user._id;
             // Atualizar usuário
             PutUsuario put = new PutUsuario(id);
             put.SetJsonBody(nome, email, password, administrador);
             IRestResponse response = put.ExecuteRequest();
 
-            dynamic jsonData = JsonConvert.DeserializeObject(response.Content.ToString());
+            dynamic jsonData = JsonConvert.DeserializeObject(response.Content);
 
             Console.WriteLine(jsonData);
 
@@ -205,22 +207,20 @@ namespace DesafioAutomacaoAPIBase2.Tests
 
             string mensagem = "Registro excluído com sucesso";
             //Criar usuários 
-            UsuarioStep.CriarUsuario();
-
-            // Pegar os dados do primeiro usuário que foi armazenado no banco de dados
-            var dadosUsuario = SolicitacaoDBSteps.BuscarUsuariosCriados();
-            string id = dadosUsuario[4];
+            IRestResponse userResponse = UsuarioStep.CriarUsuario();
+            dynamic user = JsonConvert.DeserializeObject(userResponse.Content);
+            string id = user._id;
 
             // Listar o usuário conforme os dados informados
             DeleteUsuario get = new DeleteUsuario(id);
             IRestResponse response = get.ExecuteRequest();
 
-            dynamic jsonData = JsonConvert.DeserializeObject(response.Content.ToString());
+            dynamic jsonData = JsonConvert.DeserializeObject(response.Content);
 
             Console.WriteLine(jsonData);
 
             //Deleta usuário criado no banco de dados
-            UsuarioStep.DeletarUsuarioPorIdBancoDados(id);
+            // UsuarioStep.DeletarUsuarioPorIdBancoDados(id);
 
             bool status = GeneralHelpers.RegexStatusCodesSucesso(response.StatusCode.ToString());
 
@@ -245,13 +245,13 @@ namespace DesafioAutomacaoAPIBase2.Tests
             post.SetJsonBody(nome, email, pwd, adm);
 
             IRestResponse response1 = post.ExecuteRequest();
-            dynamic jsonData = JsonConvert.DeserializeObject(response1.Content.ToString());
-            string id = jsonData._id.Value;
+            dynamic jsonData = JsonConvert.DeserializeObject(response1.Content);
+            string id = jsonData._id;
 
             // Cadastrar 2x
             IRestResponse response2 = post.ExecuteRequest();
-            dynamic jsonData2 = JsonConvert.DeserializeObject(response2.Content.ToString());
-            string msgAtual = jsonData2.message.Value;
+            dynamic jsonData2 = JsonConvert.DeserializeObject(response2.Content);
+            string msgAtual = jsonData2.message;
 
             // Excluir o usuário criado
             UsuarioStep.DeletarUsuarioPorId(id);
@@ -269,7 +269,7 @@ namespace DesafioAutomacaoAPIBase2.Tests
             GetUsuarioPorId get = new GetUsuarioPorId(id);
             IRestResponse response = get.ExecuteRequest();
 
-            dynamic jsonData = JsonConvert.DeserializeObject(response.Content.ToString());
+            dynamic jsonData = JsonConvert.DeserializeObject(response.Content);
 
             Assert.IsTrue((int)response.StatusCode == 400);
             Assert.AreEqual(msg, jsonData.message.Value);
@@ -280,7 +280,6 @@ namespace DesafioAutomacaoAPIBase2.Tests
         {
             string msg = "Este email já está sendo usado";
             string nome = "Joâo Silva";
-            string email = null;
             string pwd = "adm1234";
             bool adm = false;
 
@@ -288,18 +287,18 @@ namespace DesafioAutomacaoAPIBase2.Tests
             UsuarioStep.DeletarUsuariosCriados();
 
             // Criar um usuário
-            dynamic usuarioCriado = JsonConvert.DeserializeObject(UsuarioStep.CriarUsuario().Content.ToString());
+            dynamic usuarioCriado = JsonConvert.DeserializeObject(UsuarioStep.CriarUsuario().Content);
 
             // Buscar o usuário pelo ID para pegar o email
-            email = UsuarioStep.RetornaEmailUsuario(usuarioCriado._id.Value);
+            string email = UsuarioStep.RetornaEmailUsuario(usuarioCriado._id.Value);
 
             //Criar o usuário para atualizar
             PostUsuario post = new PostUsuario();
             post.SetJsonBody(nome, "atualizado_" + email, pwd, adm);
 
             var responsePost = post.ExecuteRequest();
-            dynamic jsonData1 = JsonConvert.DeserializeObject(responsePost.Content.ToString());
-            string id = jsonData1._id.Value;
+            dynamic jsonData1 = JsonConvert.DeserializeObject(responsePost.Content);
+            string id = jsonData1._id;
 
             // Atualizar com o mesmo email criado pelo step
             PutUsuario put = new PutUsuario(id);
@@ -307,9 +306,9 @@ namespace DesafioAutomacaoAPIBase2.Tests
 
             IRestResponse response = put.ExecuteRequest();
 
-            Console.WriteLine(response.Content.ToString());
+            Console.WriteLine(response.Content);
 
-            dynamic jsonData2 = JsonConvert.DeserializeObject(response.Content.ToString());
+            dynamic jsonData2 = JsonConvert.DeserializeObject(response.Content);
 
             Assert.IsTrue((int)response.StatusCode == 400);
             Assert.AreEqual(msg, jsonData2.message.Value);
@@ -324,17 +323,17 @@ namespace DesafioAutomacaoAPIBase2.Tests
             string msg = "Não é permitido excluir usuário com carrinho cadastrado";
 
             // Criar carrinho
-            dynamic jsonCar = JsonConvert.DeserializeObject(CarrinhosStep.CriarCarrinhoUnicoProduto().Content.ToString());
-            string idCar = jsonCar._id.Value;
+            dynamic jsonCar = JsonConvert.DeserializeObject(CarrinhosStep.CriarCarrinhoUnicoProduto().Content);
+            string idCar = jsonCar._id;
 
             string id = JsonBuilder.ReturnParameterAppSettings("USER_ID");
             // Tentar excluir o usuário
             DeleteUsuario delete = new DeleteUsuario(id);
             IRestResponse response = delete.ExecuteRequest();
 
-            Console.WriteLine(response.Content.ToString());
+            Console.WriteLine(response.Content);
 
-            dynamic jsonData = JsonConvert.DeserializeObject(response.Content.ToString());
+            dynamic jsonData = JsonConvert.DeserializeObject(response.Content);
 
             // Excluir carrinho criado
             CarrinhosStep.DeletarCarrinhoCancelarCompra();

@@ -94,7 +94,7 @@ namespace DesafioAutomacaoAPIBase2.Helpers
 
         public static string ReturnProjectPath()
         {
-            string pth = System.Reflection.Assembly.GetCallingAssembly().CodeBase;
+            string pth = System.Reflection.Assembly.GetCallingAssembly().Location;
 
             string actualPath = pth.Substring(0, pth.LastIndexOf("bin"));
 
@@ -157,11 +157,11 @@ namespace DesafioAutomacaoAPIBase2.Helpers
             return rgx.IsMatch(statusCode);
         }
 
-        public static bool ValidaContrato(string modelo, string response)
+        public static bool ValidateSchema(string model, string response)
         {
             try
             {
-                JSchema schema = JSchema.Parse(modelo);
+                JSchema schema = JSchema.Parse(model);
 
                 JObject json = JObject.Parse(response);
 
@@ -171,15 +171,14 @@ namespace DesafioAutomacaoAPIBase2.Helpers
             }
             catch (Exception)
             {
-                JSchema schema = JSchema.Parse(modelo);
+                JSchema schema = JSchema.Parse(model);
 
-               JArray json = JArray.Parse(response);
+                JArray json = JArray.Parse(response);
 
                 bool valid = json.IsValid(schema);
 
                 return valid;
             }
-      
         }
     }
 

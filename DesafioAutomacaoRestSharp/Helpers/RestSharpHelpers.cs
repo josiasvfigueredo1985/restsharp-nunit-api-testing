@@ -75,10 +75,12 @@ namespace DesafioAutomacaoAPIBase2.Helpers
                 client.Authenticator = new NtlmAuthenticator(JsonBuilder.ReturnParameterAppSettings("AUTHENTICATOR_USER"), JsonBuilder.ReturnParameterAppSettings("AUTHENTICATOR_PASSWORD"));
             }
 
-            client.AddHandler("application/json", new JsonDeserializer());
+            client.AddHandler("application/json", () => new JsonDeserializer());
 
             return client.Execute<dynamic>(request);
         }
+
+
 
         public static IRestResponse<dynamic> ExecuteFileRequest(string url,
                                                     string requestService,
@@ -143,7 +145,8 @@ namespace DesafioAutomacaoAPIBase2.Helpers
                 client.Authenticator = new NtlmAuthenticator(JsonBuilder.ReturnParameterAppSettings("AUTHENTICATOR_USER"), JsonBuilder.ReturnParameterAppSettings("AUTHENTICATOR_PASSWORD"));
             }
 
-            client.AddHandler("application/json", new JsonDeserializer());
+            client.AddHandler("application/json", () => new JsonDeserializer());
+
 
             IRestResponse<dynamic> response = client.Execute<dynamic>(request);
 
@@ -228,7 +231,7 @@ namespace DesafioAutomacaoAPIBase2.Helpers
                 client.Authenticator = new NtlmAuthenticator(JsonBuilder.ReturnParameterAppSettings("AUTHENTICATOR_USER"), JsonBuilder.ReturnParameterAppSettings("AUTHENTICATOR_PASSWORD"));
             }
 
-            //client.AddHandler("application/json", new JsonDeserializer());
+            client.AddHandler("application/json", () => new JsonDeserializer());
 
             IRestResponse<dynamic> response = client.Execute<dynamic>(request);
 

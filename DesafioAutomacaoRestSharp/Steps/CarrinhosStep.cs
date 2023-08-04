@@ -35,7 +35,7 @@ namespace DesafioAutomacaoAPIBase2.Steps
         public static IRestResponse CriarCarrinhoUnicoProduto()
         {
             DeletarCarrinhoCancelarCompra();
-            // DeletarCarrinhoConcluirCompra();
+            DeletarCarrinhoConcluirCompra();
 
             //Pegar o id gerado
             dynamic jsonData = JsonConvert.DeserializeObject(ProdutosStep.CriarProduto().Content);

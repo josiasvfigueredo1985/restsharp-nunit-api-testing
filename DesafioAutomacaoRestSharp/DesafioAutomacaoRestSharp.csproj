@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>netcoreapp7.0</TargetFramework>
     <EnableNETAnalyzers>true</EnableNETAnalyzers>
     <ApplicationIcon />
     <OutputType>WinExe</OutputType>
@@ -11,7 +11,7 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DefineConstants>DEBUG</DefineConstants>
-    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
 
   <ItemGroup>
@@ -30,6 +30,8 @@
 
   <ItemGroup>
     <Folder Include="DBSteps\" />
+    <Folder Remove="bin\" />
+    <Folder Remove="obj\" />
   </ItemGroup>
 
   <ItemGroup>

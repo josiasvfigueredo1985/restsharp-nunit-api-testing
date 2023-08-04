@@ -34,6 +34,7 @@ namespace DesafioAutomacaoAPIBase2.Requests.Usuarios
             url = JsonBuilder.ReturnParameterAppSettings("URL");
             requestService = "usuarios";
             method = Method.GET;
+     
             for (int i = 0; i < dadosUsuarios.Length; i++)
             {
                 parameters.Add(dadosUsuarios[i], dadosUsuarios[i + 1]);
