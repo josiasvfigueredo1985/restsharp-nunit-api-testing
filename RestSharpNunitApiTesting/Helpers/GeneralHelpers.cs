@@ -34,14 +34,10 @@ namespace RestSharpNunitApiTesting.RestSharpNunitApiTesting.Helpers
             string actualPath = assemblyPath.Substring(0, assemblyPath.LastIndexOf("bin"));
 
             string projectPath = new Uri(actualPath).LocalPath;
-            string[] projectDirectoryNames = ["RestsharpNunitApiTesting", "RestSharpNunitApiTesting"];
-            foreach (string projectDirectoryName in projectDirectoryNames)
+            string nestedProjectPath = Path.Combine(projectPath, "RestSharpNunitApiTesting");
+            if (Directory.Exists(nestedProjectPath))
             {
-                string nestedProjectPath = Path.Combine(projectPath, projectDirectoryName);
-                if (Directory.Exists(nestedProjectPath))
-                {
-                    return nestedProjectPath + Path.DirectorySeparatorChar;
-                }
+                return nestedProjectPath + Path.DirectorySeparatorChar;
             }
 
             return projectPath;

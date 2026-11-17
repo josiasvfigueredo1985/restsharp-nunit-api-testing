@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
+    <RootNamespace>RestSharpNunitApiTesting</RootNamespace>
     <EnableNETAnalyzers>true</EnableNETAnalyzers>
     <ApplicationIcon />
     <OutputType>WinExe</OutputType>
@@ -15,22 +16,22 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="RestsharpNunitApiTesting\Steps\DeleteProducts.cs" />
+    <Compile Remove="RestSharpNunitApiTesting\Steps\DeleteProducts.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="RestsharpNunitApiTesting\appsettings.json" />
+    <None Remove="RestSharpNunitApiTesting\appsettings.json" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="RestsharpNunitApiTesting\appsettings.json">
+    <Content Include="RestSharpNunitApiTesting\appsettings.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <TargetPath>appsettings.json</TargetPath>
     </Content>
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="RestsharpNunitApiTesting\DatabaseSteps\" />
+    <Folder Include="RestSharpNunitApiTesting\DatabaseSteps\" />
     <Folder Remove="bin\" />
     <Folder Remove="obj\" />
   </ItemGroup>
