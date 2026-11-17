@@ -82,6 +82,10 @@ jobs:
         with:
           path: _site
 
+      - name: Wait for Pages artifact
+        if: always() && steps.report.outcome == 'success' && github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        run: sleep 10
+
       - name: Publish report
         id: deployment
         if: always() && steps.report.outcome == 'success' && github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
