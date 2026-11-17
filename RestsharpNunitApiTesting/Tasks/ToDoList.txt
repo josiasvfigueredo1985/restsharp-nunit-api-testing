@@ -1,0 +1,24 @@
+REST API Automation Challenge
+
+Allowed tools: SoapUI, Postman, or source code using an API library such as RestSharp or RestAssured.
+
+400 points
+1) Implement 50 test scripts that interact with an application through a REST API.
+2) Some scripts should read data from an Excel workbook for data-driven testing.
+3) Data-driven tests can cover more test cases than scripts; 50 data-driven cases are not the same as 50 scripts.
+4) The project should handle authentication, for example OAuth 2.0.
+5) At least one test should validate using regular expressions.
+6) At least one script should use Groovy, Node.js, or another language for scripting, such as reusing a test step, calculating a CPF, iterating over returned values, or asserting results.
+
+800 points (goals 1-4 plus the following)
+7) Generate test reports automatically.
+8) Implement at least two environments (development and staging).
+9) Prepare test data in this project, either by loading data into a database or restoring a database backup. WireMock can provide test data implicitly.
+10) Run tests in parallel using at least two threads.
+11) Schedule tests with Azure DevOps, GitLab CI, Jenkins, CircleCI, TFS, or another CI tool.
+
+Tips
+
+REST API testing checklist: https://docs.google.com/spreadsheets/d/15ycll2U72ryxm5tzojmuQsHBvpdH5sSgQhkWwwuQrCY/edit?usp=sharing
+
+Possible systems under test include Mantis, JSONPlaceholder, Firebase, WireMock, ReqRes, and other public REST APIs. Review provider pricing before using paid services.

@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["dataPagamento", "formaPagamento", "precoTotal", "quantidadeTotal", "idUsuario", "_id", "idPagamento"],
+    "properties": {
+      "dataPagamento": { "type": "string" },
+      "formaPagamento": {
+        "type": "object",
+        "required": ["pix", "boleto", "credito"],
+        "properties": {
+          "pix": { "type": "boolean" },
+          "boleto": { "type": "boolean" },
+          "credito": {
+            "type": "object",
+            "required": ["credito_status", "qteParcelas", "juros"],
+            "properties": {
+              "credito_status": { "type": "boolean" },
+              "qteParcelas": { "type": "integer" },
+              "juros": { "type": "boolean" }
+            }
+          }
+        }
+      },
+      "precoTotal": { "type": "integer" },
+      "quantidadeTotal": { "type": "integer" },
+      "idUsuario": { "type": "string" },
+      "_id": { "type": "string" },
+      "idPagamento": { "type": "string" }
+    }
+  }
+}

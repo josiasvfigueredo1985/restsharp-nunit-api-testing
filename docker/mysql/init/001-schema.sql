@@ -1,0 +1,13 @@
+CREATE TABLE IF NOT EXISTS produtos (
+    produto_id VARCHAR(100) NOT NULL,
+    PRIMARY KEY (produto_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS usuarios (
+    id VARCHAR(100) NOT NULL,
+    nome VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    `password` VARCHAR(255) NOT NULL,
+    administrador VARCHAR(5) NOT NULL,
+    PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

@@ -1,0 +1,21 @@
+#!/bin/sh
+set -eu
+
+cd "$(git rev-parse --show-toplevel)"
+
+set -- '*.editorconfig' '*.cs' '*.csproj' '*.sln' '*.slnx' '*.props' '*.targets' 'global.json' '*/global.json'
+if ! git diff --quiet -- "$@"; then
+    echo "Pre-commit: stage or stash unstaged C# and build configuration changes before linting." >&2
+    exit 1
+fi
+
+if [ -n "$(git ls-files --others --exclude-standard -- "$@")" ]; then
+    echo "Pre-commit: stage or remove untracked C# and build configuration files before linting." >&2
+    exit 1
+fi
+
+echo "Pre-commit: checking .NET formatting and code style..."
+dotnet format RestSharpApiTesting.sln --no-restore --verify-no-changes --severity warn
+
+echo "Pre-commit: building with Microsoft analyzer warnings treated as errors..."
+dotnet build RestSharpApiTesting.sln --no-restore --no-incremental -warnaserror
