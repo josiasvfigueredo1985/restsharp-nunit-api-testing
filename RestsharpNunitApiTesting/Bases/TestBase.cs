@@ -1,6 +1,7 @@
 using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Helpers;
 using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Steps;
 using NUnit.Framework;
+using System;
 
 namespace RestSharpNunitApiTesting.RestSharpNunitApiTesting.Bases
 {
@@ -10,7 +11,7 @@ namespace RestSharpNunitApiTesting.RestSharpNunitApiTesting.Bases
         public void SetUp()
         {
             ExtentReportHelpers.AddTest();
-            if (TestContext.CurrentContext.Test.ClassName == "RestSharpNunitApiTesting.Tests.PaymentTests")
+            if (TestContext.CurrentContext.Test.ClassName?.EndsWith(".PaymentTests", StringComparison.Ordinal) == true)
             {
                 LocalPaymentMock.Reset();
             }
