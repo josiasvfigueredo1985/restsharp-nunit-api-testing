@@ -2,7 +2,7 @@ using RestSharp;
 using System;
 using System.Collections.Generic;
 
-namespace RestSharpApiTesting.Helpers
+namespace RestSharpNunitApiTesting.RestSharpNunitApiTesting.Helpers
 {
     public sealed class ApiRequestContext
     {

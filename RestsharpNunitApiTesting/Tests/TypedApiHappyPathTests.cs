@@ -2,20 +2,20 @@ using Bogus;
 using Newtonsoft.Json;
 using NUnit.Framework;
 using RestSharp;
-using RestSharpApiTesting.Bases;
-using RestSharpApiTesting.Helpers;
-using RestSharpApiTesting.Models;
-using RestSharpApiTesting.Requests.Carts;
-using RestSharpApiTesting.Requests.Login;
-using RestSharpApiTesting.Requests.Payments;
-using RestSharpApiTesting.Requests.Products;
-using RestSharpApiTesting.Requests.Users;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Bases;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Helpers;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Models;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Requests.Carts;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Requests.Login;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Requests.Payments;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Requests.Products;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Requests.Users;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Net;
 
-namespace RestSharpApiTesting.Tests
+namespace RestSharpNunitApiTesting.RestSharpNunitApiTesting.Tests
 {
     [TestFixture]
     [NonParallelizable]

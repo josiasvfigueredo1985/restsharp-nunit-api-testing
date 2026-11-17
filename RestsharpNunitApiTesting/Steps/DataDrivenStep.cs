@@ -1,8 +1,8 @@
-using RestSharpApiTesting.Helpers;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Helpers;
 using NUnit.Framework;
 using System.Collections.Generic;
 
-namespace RestSharpApiTesting.Steps
+namespace RestSharpNunitApiTesting.RestSharpNunitApiTesting.Steps
 {
     public static class DataDrivenStep
     {

@@ -15,7 +15,7 @@ if [ -n "$(git ls-files --others --exclude-standard -- "$@")" ]; then
 fi
 
 echo "Pre-commit: checking .NET formatting and code style..."
-dotnet format RestSharpApiTesting.sln --no-restore --verify-no-changes --severity warn
+dotnet format RestSharpNunitApiTesting.sln --no-restore --verify-no-changes --severity warn
 
 echo "Pre-commit: building with Microsoft analyzer warnings treated as errors..."
-dotnet build RestSharpApiTesting.sln --no-restore --no-incremental -warnaserror
+dotnet build RestSharpNunitApiTesting.sln --no-restore --no-incremental -warnaserror

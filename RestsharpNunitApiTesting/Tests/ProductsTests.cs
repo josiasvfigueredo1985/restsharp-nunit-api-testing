@@ -1,13 +1,13 @@
-using RestSharpApiTesting.Bases;
-using RestSharpApiTesting.Requests.Products;
-using RestSharpApiTesting.Steps;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Bases;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Requests.Products;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Steps;
 using Newtonsoft.Json;
 using NUnit.Framework;
 using RestSharp;
 using System;
 using System.Threading;
 
-namespace RestSharpApiTesting.Tests
+namespace RestSharpNunitApiTesting.RestSharpNunitApiTesting.Tests
 {
     [TestFixture]
     public class ProductsTests : TestBase

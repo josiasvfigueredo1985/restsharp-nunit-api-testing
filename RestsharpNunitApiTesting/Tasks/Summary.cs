@@ -1,7 +1,7 @@
-using RestSharpApiTesting.Helpers;
-using RestSharpApiTesting.Steps;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Helpers;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Steps;
 
-namespace RestSharpApiTesting.Tasks
+namespace RestSharpNunitApiTesting.RestSharpNunitApiTesting.Tasks
 {
     public static class Summary
     {

@@ -3,7 +3,7 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace RestSharpApiTesting.Helpers
+namespace RestSharpNunitApiTesting.RestSharpNunitApiTesting.Helpers
 {
     public static class DataDrivenHelpers
     {

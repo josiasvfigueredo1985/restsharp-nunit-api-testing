@@ -1,7 +1,7 @@
 using NUnit.Framework;
-using RestSharpApiTesting.Helpers;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Helpers;
 
-namespace RestSharpApiTesting
+namespace RestSharpNunitApiTesting
 {
     [SetUpFixture]
     public class ReportSetUpFixture

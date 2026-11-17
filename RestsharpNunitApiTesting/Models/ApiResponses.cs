@@ -1,7 +1,7 @@
 using Newtonsoft.Json;
 using System.Collections.Generic;
 
-namespace RestSharpApiTesting.Models
+namespace RestSharpNunitApiTesting.RestSharpNunitApiTesting.Models
 {
     public class ApiResponse
     {

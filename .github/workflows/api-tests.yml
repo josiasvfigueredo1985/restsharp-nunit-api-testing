@@ -1,0 +1,107 @@
+name: API tests and report
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test-and-publish:
+    name: Test and publish report
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+
+      - name: Restore
+        run: dotnet restore RestSharpNunitApiTesting.sln
+
+      - name: Verify formatting
+        run: dotnet format RestSharpNunitApiTesting.sln --no-restore --verify-no-changes --severity warn
+
+      - name: Build
+        run: dotnet build RestSharpNunitApiTesting.sln --no-restore --no-incremental -warnaserror
+
+      - name: Run isolated API tests
+        id: tests
+        continue-on-error: true
+        shell: pwsh
+        run: ./scripts/Test-LocalServeRest.ps1
+
+      - name: Prepare HTML report
+        id: report
+        if: always()
+        shell: pwsh
+        run: |
+          $reportRoot = Join-Path $PWD "bin/Debug/net10.0/Reports"
+          $reportDirectory = Get-ChildItem -LiteralPath $reportRoot -Directory -ErrorAction Stop |
+              Sort-Object LastWriteTimeUtc -Descending |
+              Select-Object -First 1
+
+          $report = Get-ChildItem -LiteralPath $reportDirectory.FullName -Filter "*.html" -File |
+              Sort-Object LastWriteTimeUtc -Descending |
+              Select-Object -First 1
+
+          if (-not $report) {
+              throw "The ExtentReports HTML file was not generated."
+          }
+
+          $site = Join-Path $PWD "_site"
+          New-Item -ItemType Directory -Path $site -Force | Out-Null
+          Copy-Item -Path (Join-Path $reportDirectory.FullName "*") -Destination $site -Recurse -Force
+          Copy-Item -LiteralPath $report.FullName -Destination (Join-Path $site "index.html") -Force
+          "report-file=$($report.Name)" >> $env:GITHUB_OUTPUT
+
+      - name: Configure GitHub Pages
+        if: always() && github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages report
+        if: always() && github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Publish report
+        id: deployment
+        if: always() && github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        uses: actions/deploy-pages@v4
+
+      - name: Write report link to job summary
+        if: always() && github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && steps.deployment.outcome == 'success'
+        run: |
+          echo "## API test report" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "[Open the HTML report](${{ steps.deployment.outputs.page_url }})" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "Report: \`${{ steps.report.outputs.report-file }}\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "HTML report: ${{ steps.deployment.outputs.page_url }}"
+
+      - name: Mark test result
+        if: always()
+        shell: bash
+        run: |
+          if [[ "${{ steps.tests.outcome }}" != "success" ]]; then
+            echo "The isolated API test run failed."
+            exit 1
+          fi

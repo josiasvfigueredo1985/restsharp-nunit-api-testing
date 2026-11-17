@@ -1,10 +1,10 @@
-using RestSharpApiTesting.Helpers;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Helpers;
 using Newtonsoft.Json;
 using RestSharp;
 using System;
 using System.Net;
 
-namespace RestSharpApiTesting.Steps
+namespace RestSharpNunitApiTesting.RestSharpNunitApiTesting.Steps
 {
     public static class LoginStep
     {

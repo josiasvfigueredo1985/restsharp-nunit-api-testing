@@ -73,7 +73,7 @@ try {
     $env:TOKEN = (Invoke-RestMethod -Uri ($env:URL + "login") -Method Post `
         -ContentType "application/json" -Body $loginBody).authorization
 
-    dotnet test (Join-Path $repositoryRoot "RestSharpApiTesting.sln") --no-restore `
+    dotnet test (Join-Path $repositoryRoot "RestSharpNunitApiTesting.sln") --no-restore `
         --filter $testFilter --logger "trx;LogFileName=$resultsFileName" --results-directory ([System.IO.Path]::GetTempPath()) `
         -- NUnit.NumberOfTestWorkers=0
     if ($LASTEXITCODE -ne 0) {

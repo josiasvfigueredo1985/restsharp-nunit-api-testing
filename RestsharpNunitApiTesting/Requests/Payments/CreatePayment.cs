@@ -1,10 +1,10 @@
-using RestSharpApiTesting.Bases;
-using RestSharpApiTesting.Helpers;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Bases;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Helpers;
 using RestSharp;
 using System.IO;
-using RestSharpApiTesting.Models;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Models;
 
-namespace RestSharpApiTesting.Requests.Payments
+namespace RestSharpNunitApiTesting.RestSharpNunitApiTesting.Requests.Payments
 {
     public class CreatePayment : RequestBase
     {

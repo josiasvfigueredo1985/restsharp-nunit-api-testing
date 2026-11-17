@@ -1,10 +1,10 @@
-using RestSharpApiTesting.Bases;
-using RestSharpApiTesting.Helpers;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Bases;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Helpers;
 using RestSharp;
 using System.IO;
-using RestSharpApiTesting.Models;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Models;
 
-namespace RestSharpApiTesting.Requests.Carts
+namespace RestSharpNunitApiTesting.RestSharpNunitApiTesting.Requests.Carts
 {
     public class PostCart : RequestBase
     {

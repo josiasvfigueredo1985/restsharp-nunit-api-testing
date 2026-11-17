@@ -4,7 +4,7 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 
-namespace RestSharpApiTesting.Helpers
+namespace RestSharpNunitApiTesting.RestSharpNunitApiTesting.Helpers
 {
     public static class JsonBuilder
     {

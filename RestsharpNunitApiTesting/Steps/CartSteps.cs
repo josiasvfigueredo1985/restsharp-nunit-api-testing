@@ -1,13 +1,13 @@
-using RestSharpApiTesting.DatabaseSteps;
-using RestSharpApiTesting.Helpers;
-using RestSharpApiTesting.Requests.Carts;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.DatabaseSteps;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Helpers;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Requests.Carts;
 using Newtonsoft.Json;
 using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Threading;
 
-namespace RestSharpApiTesting.Steps
+namespace RestSharpNunitApiTesting.RestSharpNunitApiTesting.Steps
 {
     public static class CartSteps
     {

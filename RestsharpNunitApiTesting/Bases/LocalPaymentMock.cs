@@ -1,7 +1,7 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using NUnit.Framework;
-using RestSharpApiTesting.Helpers;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Helpers;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,7 +11,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RestSharpApiTesting
+namespace RestSharpNunitApiTesting
 {
     internal static class LocalPaymentMock
     {
@@ -156,7 +156,7 @@ namespace RestSharpApiTesting
                 }
                 catch (Exception error)
                 {
-                    TestContext.Progress.WriteLine($"Local payment mock failed: {error}");
+                    await TestContext.Progress.WriteLineAsync($"Local payment mock failed: {error}");
                     await WriteResponseAsync(context.Response, 500, JsonConvert.SerializeObject("Payment mock error"));
                 }
             }
@@ -166,86 +166,109 @@ namespace RestSharpApiTesting
         {
             string path = context.Request.Url.AbsolutePath.TrimEnd('/');
             string method = context.Request.HttpMethod;
-            string id = path.StartsWith(ResourcePath + "/", StringComparison.Ordinal)
-                ? path.Substring(ResourcePath.Length + 1)
-                : null;
-            if (path != ResourcePath && (string.IsNullOrEmpty(id) || id.Contains('/')))
+            string id = GetPaymentId(path);
+            if (!IsValidPaymentPath(path, id))
             {
                 await WriteResponseAsync(context.Response, 404, JsonConvert.SerializeObject("Not found"));
                 return;
             }
 
-            JObject body = null;
-            if (method == "POST" || method == "PUT")
+            (bool isValid, JObject body) = await ReadPaymentBodyAsync(context, method);
+            if (!isValid)
             {
-                try
-                {
-                    using var reader = new StreamReader(context.Request.InputStream, context.Request.ContentEncoding);
-                    body = JObject.Parse(await reader.ReadToEndAsync());
-                }
-                catch (JsonReaderException)
-                {
-                    await WriteResponseAsync(context.Response, 400, JsonConvert.SerializeObject("Invalid payment JSON"));
-                    return;
-                }
-
-                if (!IsPayment(body))
-                {
-                    await WriteResponseAsync(context.Response, 400, JsonConvert.SerializeObject("Invalid payment data"));
-                    return;
-                }
+                return;
             }
 
-            int status;
-            string response;
+            (int status, string response) result;
             lock (StateLock)
             {
-                if (method == "GET" && id == null)
-                {
-                    status = examples["LIST"].Status;
-                    response = new JArray(Payments.Values).ToString(Formatting.None);
-                }
-                else if (method == "POST" && id == null)
-                {
-                    string newId = (++nextId).ToString();
-                    body["idPagamento"] = newId;
-                    Payments.Add(newId, body);
-                    status = examples["POST"].Status;
-                    response = body.ToString(Formatting.None);
-                }
-                else if (id != null && Payments.TryGetValue(id, out JObject payment))
-                {
-                    switch (method)
-                    {
-                        case "GET":
-                            status = examples["GET"].Status;
-                            response = payment.ToString(Formatting.None);
-                            break;
-                        case "PUT":
-                            body["idPagamento"] = id;
-                            Payments[id] = body;
-                            status = examples["PUT"].Status;
-                            response = examples["PUT"].Body;
-                            break;
-                        case "DELETE":
-                            Payments.Remove(id);
-                            status = examples["DELETE"].Status;
-                            response = examples["DELETE"].Body;
-                            break;
-                        default:
-                            status = 405;
-                            response = JsonConvert.SerializeObject("Method not allowed");
-                            break;
-                    }
-                }
-                else
-                {
-                    status = id == null ? 405 : 404;
-                    response = JsonConvert.SerializeObject(id == null ? "Method not allowed" : "Not found");
-                }
+                result = GetResponseLocked(method, id, body);
             }
 
-            await WriteResponseAsync(context.Response, status, response);
+            await WriteResponseAsync(context.Response, result.status, result.response);
+        }
+
+        private static string GetPaymentId(string path)
+        {
+            return path.StartsWith(ResourcePath + "/", StringComparison.Ordinal)
+                ? path.Substring(ResourcePath.Length + 1)
+                : null;
+        }
+
+        private static bool IsValidPaymentPath(string path, string id)
+        {
+            return path == ResourcePath || (!string.IsNullOrEmpty(id) && !id.Contains('/'));
+        }
+
+        private static async Task<(bool IsValid, JObject Body)> ReadPaymentBodyAsync(HttpListenerContext context, string method)
+        {
+            if (method != "POST" && method != "PUT")
+            {
+                return (true, null);
+            }
+
+            JObject body;
+            try
+            {
+                using var reader = new StreamReader(context.Request.InputStream, context.Request.ContentEncoding);
+                body = JObject.Parse(await reader.ReadToEndAsync());
+            }
+            catch (JsonReaderException)
+            {
+                await WriteResponseAsync(context.Response, 400, JsonConvert.SerializeObject("Invalid payment JSON"));
+                return (false, null);
+            }
+
+            if (!IsPayment(body))
+            {
+                await WriteResponseAsync(context.Response, 400, JsonConvert.SerializeObject("Invalid payment data"));
+                return (false, null);
+            }
+
+            return (true, body);
+        }
+
+        private static (int Status, string Body) GetResponseLocked(string method, string id, JObject body)
+        {
+            if (method == "GET" && id == null)
+            {
+                return (examples["LIST"].Status, new JArray(Payments.Values).ToString(Formatting.None));
+            }
+
+            if (method == "POST" && id == null)
+            {
+                string newId = (++nextId).ToString();
+                body["idPagamento"] = newId;
+                Payments.Add(newId, body);
+                return (examples["POST"].Status, body.ToString(Formatting.None));
+            }
+
+            if (id != null && Payments.TryGetValue(id, out JObject payment))
+            {
+                return HandlePaymentByIdLocked(method, id, body, payment);
+            }
+
+            return id == null
+                ? (405, JsonConvert.SerializeObject("Method not allowed"))
+                : (404, JsonConvert.SerializeObject("Not found"));
+        }
+
+        private static (int Status, string Body) HandlePaymentByIdLocked(string method, string id, JObject body, JObject payment)
+        {
+            switch (method)
+            {
+                case "GET":
+                    return (examples["GET"].Status, payment.ToString(Formatting.None));
+                case "PUT":
+                    body["idPagamento"] = id;
+                    Payments[id] = body;
+                    return (examples["PUT"].Status, examples["PUT"].Body);
+                case "DELETE":
+                    Payments.Remove(id);
+                    return (examples["DELETE"].Status, examples["DELETE"].Body);
+                default:
+                    return (405, JsonConvert.SerializeObject("Method not allowed"));
+            }
         }
 
         private static bool IsPayment(JObject payment)

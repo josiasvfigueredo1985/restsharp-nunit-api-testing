@@ -1,4 +1,4 @@
-namespace RestSharpApiTesting
+namespace RestSharpNunitApiTesting
 {
     public enum FileTypes
     {

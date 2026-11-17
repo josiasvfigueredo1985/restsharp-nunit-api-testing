@@ -1,6 +1,6 @@
 using Newtonsoft.Json;
 
-namespace RestSharpApiTesting.Models
+namespace RestSharpNunitApiTesting.RestSharpNunitApiTesting.Models
 {
     public class ProductRequest
     {

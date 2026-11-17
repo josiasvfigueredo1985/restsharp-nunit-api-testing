@@ -1,11 +1,11 @@
 using System;
 using RestSharp;
-using RestSharpApiTesting.Requests.Payments;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Requests.Payments;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using System.Threading;
 
-namespace RestSharpApiTesting.Steps
+namespace RestSharpNunitApiTesting.RestSharpNunitApiTesting.Steps
 {
     static class PaymentSteps
     {

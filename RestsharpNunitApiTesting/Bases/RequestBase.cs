@@ -1,11 +1,11 @@
-using RestSharpApiTesting.Helpers;
-using RestSharpApiTesting.Steps;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Helpers;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Steps;
 using RestSharp;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 
-namespace RestSharpApiTesting.Bases
+namespace RestSharpNunitApiTesting.RestSharpNunitApiTesting.Bases
 {
     public class RequestBase
     {

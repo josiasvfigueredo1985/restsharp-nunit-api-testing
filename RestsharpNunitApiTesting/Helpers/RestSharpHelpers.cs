@@ -8,7 +8,7 @@ using System.IO;
 using System.Threading;
 using System.Xml;
 
-namespace RestSharpApiTesting.Helpers
+namespace RestSharpNunitApiTesting.RestSharpNunitApiTesting.Helpers
 {
     public static class RestSharpHelpers
     {

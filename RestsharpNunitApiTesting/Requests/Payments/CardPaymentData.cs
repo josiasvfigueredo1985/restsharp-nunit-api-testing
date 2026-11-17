@@ -1,4 +1,4 @@
-namespace RestSharpApiTesting.Requests.Payments
+namespace RestSharpNunitApiTesting.RestSharpNunitApiTesting.Requests.Payments
 {
     public class CardPaymentData
     {

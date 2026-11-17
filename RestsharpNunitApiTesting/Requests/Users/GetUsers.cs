@@ -1,8 +1,8 @@
-using RestSharpApiTesting.Bases;
-using RestSharpApiTesting.Helpers;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Bases;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Helpers;
 using RestSharp;
 
-namespace RestSharpApiTesting.Requests.Users
+namespace RestSharpNunitApiTesting.RestSharpNunitApiTesting.Requests.Users
 {
     public class GetUsers : RequestBase
     {

@@ -1,9 +1,9 @@
-using RestSharpApiTesting.Helpers;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Helpers;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace RestSharpApiTesting.DatabaseSteps
+namespace RestSharpNunitApiTesting.RestSharpNunitApiTesting.DatabaseSteps
 {
     public static class DatabaseOperations
     {

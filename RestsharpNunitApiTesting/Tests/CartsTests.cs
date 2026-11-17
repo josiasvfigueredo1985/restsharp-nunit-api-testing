@@ -1,14 +1,14 @@
-using RestSharpApiTesting.Bases;
-using RestSharpApiTesting.Helpers;
-using RestSharpApiTesting.Requests.Carts;
-using RestSharpApiTesting.Steps;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Bases;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Helpers;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Requests.Carts;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Steps;
 using Newtonsoft.Json;
 using NUnit.Framework;
 using RestSharp;
 using System;
 using System.Collections.Generic;
 
-namespace RestSharpApiTesting.Tests
+namespace RestSharpNunitApiTesting.RestSharpNunitApiTesting.Tests
 {
     [TestFixture]
     public class CartsTests : TestBase

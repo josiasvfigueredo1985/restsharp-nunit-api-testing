@@ -1,8 +1,8 @@
-using RestSharpApiTesting.Bases;
-using RestSharpApiTesting.Helpers;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Bases;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Helpers;
 using RestSharp;
 
-namespace RestSharpApiTesting.Requests.Payments
+namespace RestSharpNunitApiTesting.RestSharpNunitApiTesting.Requests.Payments
 {
     public class DeletePayment : RequestBase
     {

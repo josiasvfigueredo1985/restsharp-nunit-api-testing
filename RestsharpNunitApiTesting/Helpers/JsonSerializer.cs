@@ -1,7 +1,7 @@
 using Newtonsoft.Json;
 using RestSharp.Serializers;
 
-namespace RestSharpApiTesting.Helpers
+namespace RestSharpNunitApiTesting.RestSharpNunitApiTesting.Helpers
 {
     public class JsonSerializer : ISerializer
     {

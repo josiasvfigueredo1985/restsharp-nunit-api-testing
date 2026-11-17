@@ -1,4 +1,4 @@
-namespace RestSharpApiTesting.Steps
+namespace  RestSharpNunitApiTesting.RestSharpNunitApiTesting.Steps
 {
     internal class DeleteProducts
     {

@@ -17,7 +17,7 @@ using System.Threading;
 using System.Xml;
 using System.Xml.Linq;
 
-namespace RestSharpApiTesting.Helpers
+namespace RestSharpNunitApiTesting.RestSharpNunitApiTesting.Helpers
 {
     public static class ExtentReportHelpers
     {

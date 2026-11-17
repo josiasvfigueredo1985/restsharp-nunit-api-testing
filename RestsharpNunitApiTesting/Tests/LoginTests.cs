@@ -1,13 +1,13 @@
 using NUnit.Framework;
-using RestSharpApiTesting.Bases;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Bases;
 using System;
-using RestSharpApiTesting.Requests.Login;
-using RestSharpApiTesting.Steps;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Requests.Login;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Steps;
 using Newtonsoft.Json;
 using RestSharp;
-using RestSharpApiTesting.Requests.Users;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Requests.Users;
 
-namespace RestSharpApiTesting.Tests
+namespace RestSharpNunitApiTesting.RestSharpNunitApiTesting.Tests
 {
     [TestFixture]
     [Parallelizable(ParallelScope.All)]// Parallelizable tests

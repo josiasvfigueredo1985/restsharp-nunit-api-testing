@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using Oracle.ManagedDataAccess.Client;
-namespace RestSharpApiTesting.Helpers
+namespace RestSharpNunitApiTesting.RestSharpNunitApiTesting.Helpers
 {
     public static class DatabaseHelpers
     {

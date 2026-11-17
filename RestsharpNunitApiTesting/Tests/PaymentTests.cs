@@ -1,10 +1,10 @@
 using NUnit.Framework;
-using RestSharpApiTesting.Bases;
-using RestSharpApiTesting.Requests.Payments;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Bases;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Requests.Payments;
 using System;
-using RestSharpApiTesting.Steps;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Steps;
 using RestSharp;
-using RestSharpApiTesting.Helpers;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Helpers;
 using System.IO;
 using System.Net;
 using System.Net.Http;
@@ -13,7 +13,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Threading.Tasks;
 
-namespace RestSharpApiTesting.Tests
+namespace RestSharpNunitApiTesting.RestSharpNunitApiTesting.Tests
 {
 
     [NonParallelizable]

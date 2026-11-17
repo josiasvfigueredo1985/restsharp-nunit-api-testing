@@ -1,11 +1,11 @@
-using RestSharpApiTesting.Helpers;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Helpers;
 using System;
 using System.Diagnostics;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace RestSharpApiTesting
+namespace RestSharpNunitApiTesting
 {
     internal static class LocalServeRest
     {

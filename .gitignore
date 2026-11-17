@@ -1,12 +1,12 @@
-# Ignorar arquivos de log
+# Ignore log files
 *.log
 
-# Ignorar diretório build
+# Ignore build directory
 bin/
 obj/
-# Ignorar arquivos temporários
+# Ignore temporary files
 *.tmp
 
-# Local database configuration and certificates
+# Ignore local database configuration and certificates
 .env
 /docker/mysql/certs/

@@ -8,7 +8,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 
-namespace RestSharpApiTesting.Helpers
+namespace RestSharpNunitApiTesting.RestSharpNunitApiTesting.Helpers
 {
     public static class GeneralHelpers
     {
@@ -34,7 +34,7 @@ namespace RestSharpApiTesting.Helpers
             string actualPath = assemblyPath.Substring(0, assemblyPath.LastIndexOf("bin"));
 
             string projectPath = new Uri(actualPath).LocalPath;
-            string nestedProjectPath = Path.Combine(projectPath, "RestsharpNunitApiTesting");
+            string nestedProjectPath = Path.Combine(projectPath, "RestSharpNunitApiTesting");
 
             return Directory.Exists(nestedProjectPath)
                 ? nestedProjectPath + Path.DirectorySeparatorChar

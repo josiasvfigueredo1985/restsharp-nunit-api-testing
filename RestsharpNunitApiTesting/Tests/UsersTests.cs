@@ -1,14 +1,14 @@
 using NUnit.Framework;
-using RestSharpApiTesting.Bases;
-using RestSharpApiTesting.Requests.Users;
-using RestSharpApiTesting.Steps;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Bases;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Requests.Users;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Steps;
 using System;
-using RestSharpApiTesting.Helpers;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Helpers;
 using RestSharp;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace RestSharpApiTesting.Tests
+namespace RestSharpNunitApiTesting.RestSharpNunitApiTesting.Tests
 {
     [TestFixture]
     class UsersTests : TestBase
