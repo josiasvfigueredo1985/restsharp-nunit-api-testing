@@ -80,9 +80,9 @@ flowchart LR
 
 ### Request execution chain
 
-1. A fixture in [Tests](./RestSharpNunitApiTesting/Tests/) arranges data and either calls an endpoint class directly or uses a workflow in [Steps](./RestSharpNunitApiTesting/Steps/). Steps can compose several requests, such as creating a product before creating a cart.
-2. A class in [Requests](./RestSharpNunitApiTesting/Requests/) selects the HTTP method, route, base URL, and request body. For example, [PostProduct](./RestSharpNunitApiTesting/Requests/Products/PostProduct.cs) targets `POST /produtos`.
-3. [RequestBase](./RestSharpNunitApiTesting/Bases/RequestBase.cs) supplies shared headers and executes the request through [RestSharpHelpers](./RestSharpNunitApiTesting/Helpers/RestSharpHelpers.cs). Configuration comes from [JsonBuilder](./RestSharpNunitApiTesting/Helpers/JsonBuilder.cs); authentication is prepared by [LoginStep](./RestSharpNunitApiTesting/Steps/LoginStep.cs).
+1. A fixture in [Tests](./RestsharpNunitApiTesting/Tests/) arranges data and either calls an endpoint class directly or uses a workflow in [Steps](./RestsharpNunitApiTesting/Steps/). Steps can compose several requests, such as creating a product before creating a cart.
+2. A class in [Requests](./RestsharpNunitApiTesting/Requests/) selects the HTTP method, route, base URL, and request body. For example, [PostProduct](./RestsharpNunitApiTesting/Requests/Products/PostProduct.cs) targets `POST /produtos`.
+3. [RequestBase](./RestsharpNunitApiTesting/Bases/RequestBase.cs) supplies shared headers and executes the request through [RestSharpHelpers](./RestsharpNunitApiTesting/Helpers/RestSharpHelpers.cs). Configuration comes from [JsonBuilder](./RestsharpNunitApiTesting/Helpers/JsonBuilder.cs); authentication is prepared by [LoginStep](./RestsharpNunitApiTesting/Steps/LoginStep.cs).
 4. RestSharp sends the HTTP request to ServeRest or the payment service. The response returns to the test for assertions; request/response details are also sent to ExtentReports.
 
 The arrows represent dependencies and data flow, not a requirement for every test to use every layer: some tests call request classes without a step, and database workflows are optional.
@@ -119,9 +119,9 @@ flowchart LR
     class Response,Dynamic,Assertions results
 ```
 
-- **Template path:** Existing request overloads read files from [Json](./RestSharpNunitApiTesting/Json/) and replace placeholders with test values. For example, `PostProduct.SetJsonBody(name, price, description, quantity)` reads `Product.json`. Some tests obtain their input from [Serverest.xlsx](./RestSharpNunitApiTesting/DataDriven/Serverest.xlsx).
-- **Typed path:** [TypedApiHappyPathTests](./RestSharpNunitApiTesting/Tests/TypedApiHappyPathTests.cs) builds objects from [Models](./RestSharpNunitApiTesting/Models/), using Bogus for random values. A typed `SetJsonBody` overload serializes the object; `[JsonProperty]` maps C# property names to the API's JSON keys. This path does not need the JSON template files.
-- **Response path:** Both approaches receive HTTP response content. Existing tests often deserialize it dynamically; typed tests use `JsonConvert.DeserializeObject<T>` and assert properties on response models. The payment list test additionally checks [Payment.json](./RestSharpNunitApiTesting/Schemas/Payment.json) as a response schema.
+- **Template path:** Existing request overloads read files from [Json](./RestsharpNunitApiTesting/Json/) and replace placeholders with test values. For example, `PostProduct.SetJsonBody(name, price, description, quantity)` reads `Product.json`. Some tests obtain their input from [Serverest.xlsx](./RestsharpNunitApiTesting/DataDriven/Serverest.xlsx).
+- **Typed path:** [TypedApiHappyPathTests](./RestsharpNunitApiTesting/Tests/TypedApiHappyPathTests.cs) builds objects from [Models](./RestsharpNunitApiTesting/Models/), using Bogus for random values. A typed `SetJsonBody` overload serializes the object; `[JsonProperty]` maps C# property names to the API's JSON keys. This path does not need the JSON template files.
+- **Response path:** Both approaches receive HTTP response content. Existing tests often deserialize it dynamically; typed tests use `JsonConvert.DeserializeObject<T>` and assert properties on response models. The payment list test additionally checks [Payment.json](./RestsharpNunitApiTesting/Schemas/Payment.json) as a response schema.
 
 ### Payment test and mock dependencies
 
@@ -158,8 +158,8 @@ The local mock's state is reset between payment tests and typed tests. It provid
 
 ### Execution lifecycle
 
-1. The NUnit [one-time setup](./RestSharpNunitApiTesting/Bases/ReportSetUpFixture.cs) starts local services when their environment overrides are absent and creates the HTML reporter.
-2. Before each test, [TestBase](./RestSharpNunitApiTesting/Bases/TestBase.cs) creates a report entry and prepares authentication. The local payment state is reset before each `PaymentTests` test; the typed fixture also resets it in its own setup.
+1. The NUnit [one-time setup](./RestsharpNunitApiTesting/Bases/ReportSetUpFixture.cs) starts local services when their environment overrides are absent and creates the HTML reporter.
+2. Before each test, [TestBase](./RestsharpNunitApiTesting/Bases/TestBase.cs) creates a report entry and prepares authentication. The local payment state is reset before each `PaymentTests` test; the typed fixture also resets it in its own setup.
 3. A test prepares data, invokes request classes, and asserts HTTP status and response content. `RequestBase` and `RestSharpHelpers` construct and execute the request and record its details.
 4. The typed fixture creates a unique administrator per test, switches to its token, tracks its own resources, and attempts to remove them during teardown. Several older fixtures have broader cleanup behavior.
 5. One-time teardown flushes the report and stops the in-process mock and any ServeRest container started by the test process. The isolated runner manages its own ServeRest container in a PowerShell `finally` block.
@@ -172,15 +172,15 @@ The Compose MySQL service supports the repository's database helper and SQL asse
 
 | Location | Purpose |
 | --- | --- |
-| [Tests](./RestSharpNunitApiTesting/Tests/) | NUnit API scenarios and the typed happy-path fixture. |
-| [Requests](./RestSharpNunitApiTesting/Requests/) | Endpoint-specific methods, paths, and request-body builders. |
-| [Bases](./RestSharpNunitApiTesting/Bases/) | Shared request/test lifecycle, local ServeRest, and payment mock. |
-| [Steps](./RestSharpNunitApiTesting/Steps/) | Reusable workflows such as login, creating products, and preparing carts. |
-| [Models](./RestSharpNunitApiTesting/Models/) | Typed request/response DTOs and JSON property mappings. |
-| [Json](./RestSharpNunitApiTesting/Json/) | Template payloads for existing tests. |
-| [DataDriven](./RestSharpNunitApiTesting/DataDriven/) | Excel fixtures. `DataDrivenStep` currently reads row 2 from worksheets 1 and 2. |
-| [Postman](./RestSharpNunitApiTesting/Postman/) and [Schemas](./RestSharpNunitApiTesting/Schemas/) | Payment collection/examples and JSON schema. |
-| [Helpers](./RestSharpNunitApiTesting/Helpers/), [DatabaseSteps](./RestSharpNunitApiTesting/DatabaseSteps/), [Queries](./RestSharpNunitApiTesting/Queries/) | HTTP, configuration, reporting, data, and database utilities. |
+| [Tests](./RestsharpNunitApiTesting/Tests/) | NUnit API scenarios and the typed happy-path fixture. |
+| [Requests](./RestsharpNunitApiTesting/Requests/) | Endpoint-specific methods, paths, and request-body builders. |
+| [Bases](./RestsharpNunitApiTesting/Bases/) | Shared request/test lifecycle, local ServeRest, and payment mock. |
+| [Steps](./RestsharpNunitApiTesting/Steps/) | Reusable workflows such as login, creating products, and preparing carts. |
+| [Models](./RestsharpNunitApiTesting/Models/) | Typed request/response DTOs and JSON property mappings. |
+| [Json](./RestsharpNunitApiTesting/Json/) | Template payloads for existing tests. |
+| [DataDriven](./RestsharpNunitApiTesting/DataDriven/) | Excel fixtures. `DataDrivenStep` currently reads row 2 from worksheets 1 and 2. |
+| [Postman](./RestsharpNunitApiTesting/Postman/) and [Schemas](./RestsharpNunitApiTesting/Schemas/) | Payment collection/examples and JSON schema. |
+| [Helpers](./RestsharpNunitApiTesting/Helpers/), [DatabaseSteps](./RestsharpNunitApiTesting/DatabaseSteps/), [Queries](./RestsharpNunitApiTesting/Queries/) | HTTP, configuration, reporting, data, and database utilities. |
 | [scripts](./scripts/) | Isolated test runner and local MySQL certificate generation. |
 | [docker/mysql](./docker/mysql/) and [docker-compose.yml](./docker-compose.yml) | Optional MySQL image, TLS configuration, and initial schema. |
 
@@ -204,11 +204,11 @@ Typed tests verify more than successful status codes: they compare IDs and field
 
 ## Configuration and authentication
 
-Settings are resolved by [JsonBuilder](./RestSharpNunitApiTesting/Helpers/JsonBuilder.cs) in this order:
+Settings are resolved by [JsonBuilder](./RestsharpNunitApiTesting/Helpers/JsonBuilder.cs) in this order:
 
 1. Nonempty in-process runtime overrides.
 2. Nonempty environment variables.
-3. Values in [appsettings.json](./RestSharpNunitApiTesting/appsettings.json).
+3. Values in [appsettings.json](./RestsharpNunitApiTesting/appsettings.json).
 
 Local test startup supplies runtime URLs and credentials. Do not commit credentials to `appsettings.json`, the repository, reports, or logs. Environment variables belong to the process running the tests; a Compose `.env` file does **not** automatically export them to `dotnet test`.
 
@@ -253,7 +253,7 @@ An explicitly set `URL` or `URL_MOCK` selects the corresponding external service
 
 ## Payment mock
 
-The [Postman collection](./RestSharpNunitApiTesting/Postman/ServeRestMockApi.postman_collection.json) contains requests and saved response examples; it is **not** an executable server. [LocalPaymentMock](./RestSharpNunitApiTesting/Bases/LocalPaymentMock.cs) reads its five expected request definitions, success statuses, and update/delete messages, then runs a loopback-only `HttpListener` with in-memory CRUD state.
+The [Postman collection](./RestsharpNunitApiTesting/Postman/ServeRestMockApi.postman_collection.json) contains requests and saved response examples; it is **not** an executable server. [LocalPaymentMock](./RestsharpNunitApiTesting/Bases/LocalPaymentMock.cs) reads its five expected request definitions, success statuses, and update/delete messages, then runs a loopback-only `HttpListener` with in-memory CRUD state.
 
 - A created payment receives an `idPagamento`; list and lookup return stored values.
 - Create/update require the payment JSON structure and boolean/integer field types. Invalid JSON or data returns `400`; missing IDs return `404`.
@@ -313,7 +313,7 @@ The named `mysql_data` volume persists across container stops. MySQL's initializ
 ## Adding a test
 
 1. Identify the service, method, route, expected status, response contract, authentication, and required state.
-2. Reuse an existing class in [Requests](./RestSharpNunitApiTesting/Requests/) or add an endpoint-specific class derived from `RequestBase`.
+2. Reuse an existing class in [Requests](./RestsharpNunitApiTesting/Requests/) or add an endpoint-specific class derived from `RequestBase`.
 3. Prefer typed DTOs for new request/response shapes. `JsonProperty` maps C# names to the API's JSON keys; for example, `UserRequest.Administrator` maps to `administrador`, which ServeRest expects as the **string** `"true"` or `"false"`. Payment flags, by contrast, are JSON booleans.
 4. Generate valid data with Bogus, add a unique suffix where the API requires unique values, and retain actual IDs from create responses.
 5. Assert the status and meaningful response fields or state changes. Verify updated/deleted state where appropriate; avoid relying on another test's execution order.
@@ -336,7 +336,7 @@ public void PostProducts_CreatesProduct()
 }
 ```
 
-Here `NewProduct`, `CreateProduct`, and `Read<T>` are helpers in [TypedApiHappyPathTests](./RestSharpNunitApiTesting/Tests/TypedApiHappyPathTests.cs). The create helper passes the model to `PostProduct.SetJsonBody`, records its ID for teardown, and deserializes the response. `RequestBase` serializes typed request objects with Newtonsoft.Json; the older template overloads remain available.
+Here `NewProduct`, `CreateProduct`, and `Read<T>` are helpers in [TypedApiHappyPathTests](./RestsharpNunitApiTesting/Tests/TypedApiHappyPathTests.cs). The create helper passes the model to `PostProduct.SetJsonBody`, records its ID for teardown, and deserializes the response. `RequestBase` serializes typed request objects with Newtonsoft.Json; the older template overloads remain available.
 
 ## Reports
 

@@ -15,21 +15,22 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="RestSharpNunitApiTesting\Steps\DeleteProducts.cs" />
+    <Compile Remove="RestsharpNunitApiTesting\Steps\DeleteProducts.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="RestSharpNunitApiTesting\appsettings.json" />
+    <None Remove="RestsharpNunitApiTesting\appsettings.json" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="RestSharpNunitApiTesting\appsettings.json">
+    <Content Include="RestsharpNunitApiTesting\appsettings.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>appsettings.json</TargetPath>
     </Content>
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="RestSharpNunitApiTesting\DatabaseSteps\" />
+    <Folder Include="RestsharpNunitApiTesting\DatabaseSteps\" />
     <Folder Remove="bin\" />
     <Folder Remove="obj\" />
   </ItemGroup>
