@@ -123,6 +123,16 @@ flowchart LR
 - **Typed path:** [TypedApiHappyPathTests](./RestSharpNunitApiTesting/Tests/TypedApiHappyPathTests.cs) builds objects from [Models](./RestSharpNunitApiTesting/Models/), using Bogus for random values. A typed `SetJsonBody` overload serializes the object; `[JsonProperty]` maps C# property names to the API's JSON keys. This path does not need the JSON template files.
 - **Response path:** Both approaches receive HTTP response content. Existing tests often deserialize it dynamically; typed tests use `JsonConvert.DeserializeObject<T>` and assert properties on response models. The payment list test additionally checks [Payment.json](./RestSharpNunitApiTesting/Schemas/Payment.json) as a response schema.
 
+### Choosing between JSON templates and typed models
+
+Both approaches are intentional and serve different project stages; choose based on project size and maturity rather than mixing them arbitrarily.
+
+**JSON templates suit small projects and early-stage testing.** Editing a payload file and replacing placeholders requires little code, so coverage grows quickly and testing never becomes a delivery bottleneck while the API is still taking shape. Templates are easy for newcomers to read, can be copied directly from API documentation or captured traffic, and let non-developers contribute test data. The trade-offs: payloads are validated only at runtime, renamed or restructured fields must be fixed by hand in every affected file, and the compiler cannot help you find broken tests.
+
+**Typed models suit larger projects.** This is the more technical approach: request and response DTOs with `[JsonProperty]` mappings give compile-time safety, refactoring support, and IDE navigation. When the API contract changes, updating one model surfaces every affected test as a build error instead of a runtime failure. Models also compose well with data generators such as Bogus and keep assertions strongly typed. The cost is more upfront code per endpoint, which pays off as the test suite and team grow.
+
+A practical path is to start with templates to get fast feedback early, then migrate high-value or frequently changing endpoints to typed models as the project grows — this repository demonstrates both: the template-based suites in [Tests](./RestSharpNunitApiTesting/Tests/) and the typed approach in [TypedApiHappyPathTests](./RestSharpNunitApiTesting/Tests/TypedApiHappyPathTests.cs).
+
 ### Payment test and mock dependencies
 
 ```mermaid
