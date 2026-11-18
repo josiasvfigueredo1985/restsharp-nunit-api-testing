@@ -3,9 +3,26 @@ root = true
 [*.cs]
 indent_style = space
 indent_size = 4
+csharp_using_directive_placement = outside_namespace
 
 # Microsoft code-style and correctness rules.
 dotnet_diagnostic.IDE0005.severity = warning
+dotnet_diagnostic.IDE0065.severity = warning
 dotnet_diagnostic.CA2011.severity = warning
 dotnet_diagnostic.CA2200.severity = warning
 dotnet_diagnostic.CA2208.severity = warning
+
+# StyleCop.Analyzers rules.
+# Keep StyleCop feedback advisory while existing code is brought into compliance.
+dotnet_analyzer_diagnostic.category-StyleCop.CSharp.SpacingRules.severity = suggestion
+dotnet_analyzer_diagnostic.category-StyleCop.CSharp.ReadabilityRules.severity = suggestion
+dotnet_analyzer_diagnostic.category-StyleCop.CSharp.OrderingRules.severity = suggestion
+dotnet_analyzer_diagnostic.category-StyleCop.CSharp.NamingRules.severity = suggestion
+dotnet_analyzer_diagnostic.category-StyleCop.CSharp.MaintainabilityRules.severity = suggestion
+dotnet_analyzer_diagnostic.category-StyleCop.CSharp.LayoutRules.severity = suggestion
+dotnet_analyzer_diagnostic.category-StyleCop.CSharp.DocumentationRules.severity = suggestion
+dotnet_analyzer_diagnostic.category-StyleCop.CSharp.SuppressionRules.severity = suggestion
+dotnet_diagnostic.SA0001.severity = none
+dotnet_diagnostic.SA1600.severity = none
+dotnet_diagnostic.SA1633.severity = none
+dotnet_diagnostic.SA1200.severity = none

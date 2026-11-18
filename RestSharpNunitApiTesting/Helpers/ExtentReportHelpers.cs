@@ -1,12 +1,3 @@
-using AventStack.ExtentReports;
-using AventStack.ExtentReports.Reporter;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using NUnit.Framework;
-using NUnit.Framework.Interfaces;
-using RestSharp;
-using ExtentReports = AventStack.ExtentReports.ExtentReports;
-using JsonFormatting = Newtonsoft.Json.Formatting;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -16,6 +7,15 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Xml;
 using System.Xml.Linq;
+using AventStack.ExtentReports;
+using AventStack.ExtentReports.Reporter;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using NUnit.Framework;
+using NUnit.Framework.Interfaces;
+using RestSharp;
+using ExtentReports = AventStack.ExtentReports.ExtentReports;
+using JsonFormatting = Newtonsoft.Json.Formatting;
 
 namespace RestSharpNunitApiTesting.RestSharpNunitApiTesting.Helpers
 {

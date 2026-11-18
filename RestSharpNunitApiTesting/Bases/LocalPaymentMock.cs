@@ -1,7 +1,3 @@
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using NUnit.Framework;
-using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Helpers;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,6 +6,10 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using NUnit.Framework;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Helpers;
 
 namespace RestSharpNunitApiTesting
 {

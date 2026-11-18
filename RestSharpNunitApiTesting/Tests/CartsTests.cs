@@ -1,12 +1,12 @@
+using System;
+using System.Collections.Generic;
+using Newtonsoft.Json;
+using NUnit.Framework;
+using RestSharp;
 using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Bases;
 using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Helpers;
 using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Requests.Carts;
 using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Steps;
-using Newtonsoft.Json;
-using NUnit.Framework;
-using RestSharp;
-using System;
-using System.Collections.Generic;
 
 namespace RestSharpNunitApiTesting.RestSharpNunitApiTesting.Tests
 {

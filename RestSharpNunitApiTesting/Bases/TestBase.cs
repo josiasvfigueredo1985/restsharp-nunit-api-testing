@@ -1,7 +1,7 @@
+using System;
+using NUnit.Framework;
 using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Helpers;
 using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Steps;
-using NUnit.Framework;
-using System;
 
 namespace RestSharpNunitApiTesting.RestSharpNunitApiTesting.Bases
 {

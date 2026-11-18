@@ -1,21 +1,20 @@
-using NUnit.Framework;
-using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Bases;
-using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Requests.Payments;
 using System;
-using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Steps;
-using RestSharp;
-using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Helpers;
 using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Text;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using System.Threading.Tasks;
+using NUnit.Framework;
+using RestSharp;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Bases;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Helpers;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Requests.Payments;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Steps;
 
 namespace RestSharpNunitApiTesting.RestSharpNunitApiTesting.Tests
 {
-
     [NonParallelizable]
     class PaymentTests : TestBase
     {

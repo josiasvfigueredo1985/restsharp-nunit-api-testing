@@ -1,7 +1,7 @@
+using System.IO;
+using RestSharp;
 using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Bases;
 using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Helpers;
-using RestSharp;
-using System.IO;
 using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Models;
 
 namespace RestSharpNunitApiTesting.RestSharpNunitApiTesting.Requests.Carts

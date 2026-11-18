@@ -1,5 +1,3 @@
-using Newtonsoft.Json.Linq;
-using Newtonsoft.Json.Schema;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -7,6 +5,8 @@ using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json.Schema;
 
 namespace RestSharpNunitApiTesting.RestSharpNunitApiTesting.Helpers
 {
@@ -15,7 +15,10 @@ namespace RestSharpNunitApiTesting.RestSharpNunitApiTesting.Helpers
         public static void EnsureDirectoryExists(string fullReportFilePath)
         {
             var directory = Path.GetDirectoryName(fullReportFilePath);
-            if (!Directory.Exists(directory)) Directory.CreateDirectory(directory);
+            if (!Directory.Exists(directory))
+            {
+                Directory.CreateDirectory(directory);
+            }
         }
 
         public static string ReturnStringWithRandomNumbers(int size)

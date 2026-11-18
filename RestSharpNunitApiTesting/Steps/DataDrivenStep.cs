@@ -1,6 +1,6 @@
-using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Helpers;
-using NUnit.Framework;
 using System.Collections.Generic;
+using NUnit.Framework;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Helpers;
 
 namespace RestSharpNunitApiTesting.RestSharpNunitApiTesting.Steps
 {

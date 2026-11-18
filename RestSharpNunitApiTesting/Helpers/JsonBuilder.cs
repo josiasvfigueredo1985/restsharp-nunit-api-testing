@@ -1,8 +1,8 @@
-using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
+using Newtonsoft.Json.Linq;
 
 namespace RestSharpNunitApiTesting.RestSharpNunitApiTesting.Helpers
 {

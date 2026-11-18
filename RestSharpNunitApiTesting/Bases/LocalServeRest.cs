@@ -1,9 +1,9 @@
-using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Helpers;
 using System;
 using System.Diagnostics;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Helpers;
 
 namespace RestSharpNunitApiTesting
 {

@@ -1,6 +1,6 @@
+using RestSharp;
 using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Bases;
 using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Helpers;
-using RestSharp;
 
 namespace RestSharpNunitApiTesting.RestSharpNunitApiTesting.Requests.Carts
 {

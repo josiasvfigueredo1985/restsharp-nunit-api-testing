@@ -1,3 +1,7 @@
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Net;
 using Bogus;
 using Newtonsoft.Json;
 using NUnit.Framework;
@@ -10,10 +14,6 @@ using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Requests.Login;
 using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Requests.Payments;
 using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Requests.Products;
 using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Requests.Users;
-using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Net;
 
 namespace RestSharpNunitApiTesting.RestSharpNunitApiTesting.Tests
 {

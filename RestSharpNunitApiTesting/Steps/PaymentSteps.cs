@@ -1,9 +1,9 @@
 using System;
+using System.Threading;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using RestSharp;
 using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Requests.Payments;
-using Newtonsoft.Json.Linq;
-using Newtonsoft.Json;
-using System.Threading;
 
 namespace RestSharpNunitApiTesting.RestSharpNunitApiTesting.Steps
 {

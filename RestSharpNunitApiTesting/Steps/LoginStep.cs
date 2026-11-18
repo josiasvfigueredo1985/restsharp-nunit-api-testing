@@ -1,8 +1,8 @@
-using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Helpers;
-using Newtonsoft.Json;
-using RestSharp;
 using System;
 using System.Net;
+using Newtonsoft.Json;
+using RestSharp;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Helpers;
 
 namespace RestSharpNunitApiTesting.RestSharpNunitApiTesting.Steps
 {

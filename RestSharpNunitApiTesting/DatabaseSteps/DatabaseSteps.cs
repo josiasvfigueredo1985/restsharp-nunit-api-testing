@@ -1,7 +1,7 @@
-using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Helpers;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Helpers;
 
 namespace RestSharpNunitApiTesting.RestSharpNunitApiTesting.DatabaseSteps
 {

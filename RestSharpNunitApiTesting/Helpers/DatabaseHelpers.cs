@@ -1,10 +1,11 @@
-using MySql.Data.MySqlClient;
-using Npgsql;
-using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using Microsoft.Data.SqlClient;
+using MySql.Data.MySqlClient;
+using Npgsql;
 using Oracle.ManagedDataAccess.Client;
+
 namespace RestSharpNunitApiTesting.RestSharpNunitApiTesting.Helpers
 {
     public static class DatabaseHelpers

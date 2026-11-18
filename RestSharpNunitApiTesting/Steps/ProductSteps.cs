@@ -1,12 +1,12 @@
-using ClosedXML.Excel;
-using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Helpers;
-using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Requests.Products;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClosedXML.Excel;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using RestSharp;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Helpers;
+using RestSharpNunitApiTesting.RestSharpNunitApiTesting.Requests.Products;
 
 namespace RestSharpNunitApiTesting.RestSharpNunitApiTesting.Steps
 {

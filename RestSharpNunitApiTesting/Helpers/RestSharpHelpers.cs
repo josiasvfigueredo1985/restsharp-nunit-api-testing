@@ -1,12 +1,12 @@
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using RestSharp;
-using RestSharp.Authenticators;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading;
 using System.Xml;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using RestSharp;
+using RestSharp.Authenticators;
 
 namespace RestSharpNunitApiTesting.RestSharpNunitApiTesting.Helpers
 {

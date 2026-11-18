@@ -352,7 +352,7 @@ The isolated script uses a temporary TRX file to verify that tests ran, then del
 
 ## Code quality and Git hooks
 
-The .NET SDK's formatter and built-in Microsoft analyzers check this C# project; no separate lint package is required. The baseline enforces formatting, unused imports (IDE0005), and correctness rules for recursive property accessors (CA2011), rethrowing exceptions (CA2200), and exception argument names (CA2208). Build warnings are treated as errors by the quality check. These are general .NET rules, not RestSharp-specific API checks.
+The .NET SDK's formatter and built-in Microsoft analyzers check this C# project. StyleCop.Analyzers adds C# style feedback in the editor; its rules remain advisory while the existing codebase is brought into compliance. The quality gate enforces formatting, unused imports (IDE0005), and correctness rules for recursive property accessors (CA2011), rethrowing exceptions (CA2200), and exception argument names (CA2208). Build warnings are treated as errors by the quality check. These are general .NET rules, not RestSharp-specific API checks.
 
 After restoring packages, run:
 

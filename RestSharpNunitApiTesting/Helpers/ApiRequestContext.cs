@@ -1,6 +1,6 @@
-using RestSharp;
 using System;
 using System.Collections.Generic;
+using RestSharp;
 
 namespace RestSharpNunitApiTesting.RestSharpNunitApiTesting.Helpers
 {
